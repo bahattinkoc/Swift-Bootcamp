@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E2D2476C-7527-4286-91C9-5A4091AB805E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAA3E873-B8A3-4067-A0DE-A297982DC48F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YerliAngryBirds/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "location"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "EAA3E873-B8A3-4067-A0DE-A297982DC48F - b71f3cd3b9366ec1"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YerliAngryBirds.ViewController.Mortar.init(location: Swift.Double, angle: Swift.Double, speed: Swift.Double) -&gt; YerliAngryBirds.ViewController.Mortar"
+                  moduleName = "YerliAngryBirds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bahattinkoc/Desktop/IOS/Homeworks/week3/YerliAngryBirds/YerliAngryBirds/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "EAA3E873-B8A3-4067-A0DE-A297982DC48F - c22e7d3da6ebb790"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YerliAngryBirds.ViewController.Mortar.init() -&gt; YerliAngryBirds.ViewController.Mortar"
+                  moduleName = "YerliAngryBirds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bahattinkoc/Desktop/IOS/Homeworks/week3/YerliAngryBirds/YerliAngryBirds/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7E9C80B-B9D7-49E0-BA18-EC11B8DF3AC2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YerliAngryBirds/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

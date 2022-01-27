@@ -250,4 +250,4 @@ func findSumSquareDif(limit: Int){
     print("Sum of the Square: \(firstSumThenSquare)\nSquare of the sum: \(firstSquareThenSum)\nDifference: \(firstSumThenSquare - firstSquareThenSum)")
 }
 
-findSumSquareDif(limit: 100)
+// findSumSquareDif(limit: 100)
