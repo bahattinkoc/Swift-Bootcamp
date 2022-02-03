@@ -127,7 +127,7 @@ func isPrime(x: Int) -> Bool{
     return prime
 }
 
-// var i = find10001sPrime()
+var i = find10001sPrime()
 // print("The answer is: \(i)")
 
 
