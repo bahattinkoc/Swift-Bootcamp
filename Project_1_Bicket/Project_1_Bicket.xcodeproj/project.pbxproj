@@ -7,29 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A348924527B9639E008D91BB /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = A348924427B9639E008D91BB /* cities.json */; };
+		A348924827BA8BF1008D91BB /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A348924727BA8BF1008D91BB /* Ticket.swift */; };
+		A348924A27BA8C2C008D91BB /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A348924927BA8C2C008D91BB /* Passenger.swift */; };
+		A348924C27BA8C40008D91BB /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A348924B27BA8C40008D91BB /* Date.swift */; };
+		A348924E27BA8C4D008D91BB /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A348924D27BA8C4D008D91BB /* Time.swift */; };
+		A348925027BA95DB008D91BB /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A348924F27BA95DB008D91BB /* Bus.swift */; };
+		A34DF5B827BF54F500A25AF8 /* TicketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34DF5B727BF54F500A25AF8 /* TicketDetailViewController.swift */; };
 		A398E53A27B5970300036523 /* RootOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398E53927B5970300036523 /* RootOnboardViewController.swift */; };
 		A398E53D27B5C5CB00036523 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398E53B27B5C5CB00036523 /* OnboardViewController.swift */; };
 		A398E53E27B5C5CB00036523 /* OnboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A398E53C27B5C5CB00036523 /* OnboardViewController.xib */; };
+		A3B6062127BBEC8200251618 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6062027BBEC8200251618 /* CitiesViewController.swift */; };
+		A3B6062727BC105F00251618 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6062627BC105F00251618 /* CityModel.swift */; };
+		A3B6062927BC1F9D00251618 /* ShowBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6062827BC1F9D00251618 /* ShowBusViewController.swift */; };
+		A3B6062D27BC234C00251618 /* BusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6062B27BC234C00251618 /* BusCell.swift */; };
+		A3B6062E27BC234C00251618 /* BusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3B6062C27BC234C00251618 /* BusCell.xib */; };
+		A3BCA1C627B93088009ACD2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3BCA1C527B93088009ACD2B /* Assets.xcassets */; };
+		A3C0C9A727BC862600481C66 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C0C9A627BC862600481C66 /* Global.swift */; };
+		A3C0C9A927BC8C2800481C66 /* SetSeatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C0C9A827BC8C2800481C66 /* SetSeatsViewController.swift */; };
 		A3FE819727B58F6200BB9890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE819627B58F6200BB9890 /* AppDelegate.swift */; };
 		A3FE819927B58F6200BB9890 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE819827B58F6200BB9890 /* SceneDelegate.swift */; };
 		A3FE819B27B58F6200BB9890 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FE819A27B58F6200BB9890 /* MainController.swift */; };
 		A3FE819E27B58F6200BB9890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FE819C27B58F6200BB9890 /* Main.storyboard */; };
 		A3FE81A127B58F6200BB9890 /* Project_1_Bicket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A3FE819F27B58F6200BB9890 /* Project_1_Bicket.xcdatamodeld */; };
-		A3FE81A327B58F6400BB9890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3FE81A227B58F6400BB9890 /* Assets.xcassets */; };
 		A3FE81A627B58F6400BB9890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3FE81A427B58F6400BB9890 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A348924427B9639E008D91BB /* cities.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		A348924727BA8BF1008D91BB /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		A348924927BA8C2C008D91BB /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
+		A348924B27BA8C40008D91BB /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		A348924D27BA8C4D008D91BB /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		A348924F27BA95DB008D91BB /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
+		A34DF5B727BF54F500A25AF8 /* TicketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailViewController.swift; sourceTree = "<group>"; };
 		A398E53927B5970300036523 /* RootOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootOnboardViewController.swift; sourceTree = "<group>"; };
 		A398E53B27B5C5CB00036523 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		A398E53C27B5C5CB00036523 /* OnboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardViewController.xib; sourceTree = "<group>"; };
+		A3B6062027BBEC8200251618 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
+		A3B6062627BC105F00251618 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		A3B6062827BC1F9D00251618 /* ShowBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBusViewController.swift; sourceTree = "<group>"; };
+		A3B6062B27BC234C00251618 /* BusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusCell.swift; sourceTree = "<group>"; };
+		A3B6062C27BC234C00251618 /* BusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusCell.xib; sourceTree = "<group>"; };
+		A3BCA1C527B93088009ACD2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../week-5/week-5/Assets.xcassets"; sourceTree = "<group>"; };
+		A3C0C9A627BC862600481C66 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		A3C0C9A827BC8C2800481C66 /* SetSeatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSeatsViewController.swift; sourceTree = "<group>"; };
 		A3FE819327B58F6200BB9890 /* Project_1_Bicket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_1_Bicket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FE819627B58F6200BB9890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3FE819827B58F6200BB9890 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A3FE819A27B58F6200BB9890 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		A3FE819D27B58F6200BB9890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3FE81A027B58F6200BB9890 /* Project_1_Bicket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project_1_Bicket.xcdatamodel; sourceTree = "<group>"; };
-		A3FE81A227B58F6400BB9890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3FE81A527B58F6400BB9890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3FE81A727B58F6400BB9890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,15 +73,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A398E53627B593B600036523 /* Controller */ = {
+		A348924227B95D47008D91BB /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				A3FE819A27B58F6200BB9890 /* MainController.swift */,
 				A398E53927B5970300036523 /* RootOnboardViewController.swift */,
 				A398E53B27B5C5CB00036523 /* OnboardViewController.swift */,
 				A398E53C27B5C5CB00036523 /* OnboardViewController.xib */,
 			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A348924327B9638D008D91BB /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				A348924427B9639E008D91BB /* cities.json */,
+			);
+			path = "Data Source";
+			sourceTree = "<group>";
+		};
+		A348924627BA8BE1008D91BB /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				A348924727BA8BF1008D91BB /* Ticket.swift */,
+				A348924927BA8C2C008D91BB /* Passenger.swift */,
+				A348924B27BA8C40008D91BB /* Date.swift */,
+				A348924D27BA8C4D008D91BB /* Time.swift */,
+				A348924F27BA95DB008D91BB /* Bus.swift */,
+				A3C0C9A627BC862600481C66 /* Global.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		A398E53627B593B600036523 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A348924227B95D47008D91BB /* Onboarding */,
+				A3FE819A27B58F6200BB9890 /* MainController.swift */,
+				A3B6062027BBEC8200251618 /* CitiesViewController.swift */,
+				A3B6062827BC1F9D00251618 /* ShowBusViewController.swift */,
+				A3C0C9A827BC8C2800481C66 /* SetSeatsViewController.swift */,
+				A34DF5B727BF54F500A25AF8 /* TicketDetailViewController.swift */,
+			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A3B6062527BC105200251618 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3B6062627BC105F00251618 /* CityModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A3B6062A27BC233100251618 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A3B6062B27BC234C00251618 /* BusCell.swift */,
+				A3B6062C27BC234C00251618 /* BusCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A3FE818A27B58F6200BB9890 = {
@@ -75,12 +153,16 @@
 		A3FE819527B58F6200BB9890 /* Project_1_Bicket */ = {
 			isa = PBXGroup;
 			children = (
+				A3B6062A27BC233100251618 /* Cell */,
+				A3B6062527BC105200251618 /* Model */,
+				A348924627BA8BE1008D91BB /* Class */,
+				A348924327B9638D008D91BB /* Data Source */,
 				A398E53627B593B600036523 /* Controller */,
 				A3FE819627B58F6200BB9890 /* AppDelegate.swift */,
 				A3FE819827B58F6200BB9890 /* SceneDelegate.swift */,
 				A3FE819C27B58F6200BB9890 /* Main.storyboard */,
-				A3FE81A227B58F6400BB9890 /* Assets.xcassets */,
 				A3FE81A427B58F6400BB9890 /* LaunchScreen.storyboard */,
+				A3BCA1C527B93088009ACD2B /* Assets.xcassets */,
 				A3FE81A727B58F6400BB9890 /* Info.plist */,
 				A3FE819F27B58F6200BB9890 /* Project_1_Bicket.xcdatamodeld */,
 			);
@@ -146,8 +228,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3FE81A627B58F6400BB9890 /* LaunchScreen.storyboard in Resources */,
-				A3FE81A327B58F6400BB9890 /* Assets.xcassets in Resources */,
+				A348924527B9639E008D91BB /* cities.json in Resources */,
 				A398E53E27B5C5CB00036523 /* OnboardViewController.xib in Resources */,
+				A3BCA1C627B93088009ACD2B /* Assets.xcassets in Resources */,
+				A3B6062E27BC234C00251618 /* BusCell.xib in Resources */,
 				A3FE819E27B58F6200BB9890 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,11 +243,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A348925027BA95DB008D91BB /* Bus.swift in Sources */,
 				A398E53A27B5970300036523 /* RootOnboardViewController.swift in Sources */,
 				A3FE819B27B58F6200BB9890 /* MainController.swift in Sources */,
+				A3C0C9A927BC8C2800481C66 /* SetSeatsViewController.swift in Sources */,
+				A348924E27BA8C4D008D91BB /* Time.swift in Sources */,
+				A3B6062727BC105F00251618 /* CityModel.swift in Sources */,
+				A348924A27BA8C2C008D91BB /* Passenger.swift in Sources */,
 				A398E53D27B5C5CB00036523 /* OnboardViewController.swift in Sources */,
 				A3FE81A127B58F6200BB9890 /* Project_1_Bicket.xcdatamodeld in Sources */,
+				A3C0C9A727BC862600481C66 /* Global.swift in Sources */,
+				A34DF5B827BF54F500A25AF8 /* TicketDetailViewController.swift in Sources */,
 				A3FE819727B58F6200BB9890 /* AppDelegate.swift in Sources */,
+				A3B6062927BC1F9D00251618 /* ShowBusViewController.swift in Sources */,
+				A3B6062D27BC234C00251618 /* BusCell.swift in Sources */,
+				A348924827BA8BF1008D91BB /* Ticket.swift in Sources */,
+				A3B6062127BBEC8200251618 /* CitiesViewController.swift in Sources */,
+				A348924C27BA8C40008D91BB /* Date.swift in Sources */,
 				A3FE819927B58F6200BB9890 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

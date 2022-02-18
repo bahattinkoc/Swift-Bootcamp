@@ -79,7 +79,6 @@
         <!--Crypto WalletUIVC-->
         <scene sceneID="dS8-qs-v2m">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Njj-1R-12I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Iqr-gc-3bq" customClass="CryptoWalletUIVC" customModule="weekFourProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GCo-pS-krJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -145,6 +144,7 @@
                         <outlet property="collectionView" destination="RAm-nK-jjr" id="okb-KW-vZL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Njj-1R-12I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="1470.5357142857142"/>
         </scene>

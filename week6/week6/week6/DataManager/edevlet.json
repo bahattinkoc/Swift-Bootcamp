@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "type": "top",
+    "title": "Hoşgeldin Bahattin Koç",
+    "subtitle": "",
+    "items": [
+      {
+        "id": 1,
+        "name": "Fawori Hizmetlerim",
+        "subheading": "",
+        "image": "star"
+      },
+      {
+        "id": 2,
+        "name": "Duyurular",
+        "subheading": "",
+        "image": "duyuru"
+      },
+      {
+        "id": 3,
+        "name": "Mesajlarım",
+        "subheading": "",
+        "image": "mesaj"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "type": "highlight",
+    "title": "Öne Çıkan Hizmetler",
+    "subtitle": "",
+    "items": [
+      {
+        "id": 4,
+        "name": "Araçlarım (Gerçek Kişi)",
+        "subheading": "e-Devlet Kapısı",
+        "image": "araba"
+      },
+      {
+        "id": 5,
+        "name": "Araçlarım (Tüzel Kişi)",
+        "subheading": "e-Devlet Kapısı",
+        "image": "araba"
+      },
+      {
+        "id": 6,
+        "name": "HES Kodu Üretme ve Listeleme",
+        "subheading": "Sağlık Bakanlığo",
+        "image": "saglik-bakanligi"
+      },
+      {
+        "id": 7,
+        "name": "SGK Tescil ve Hizmet Dökümü / İşyeri Ünvan Listesi",
+        "subheading": "Sosyal Güvenlik Kurumu",
+        "image": "sgk"
+      },
+      {
+        "id": 8,
+        "name": "Vergi Borcu Sorgulama",
+        "subheading": "Gelir İdaresi Başkanlığı",
+        "image": "vergi"
+      },
+      {
+        "id": 9,
+        "name": "Mobil Hat Sorgulama",
+        "subheading": "Bilgi Teknolojileri ve İletişim Kurumu",
+        "image": "btk"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "type": "top",
+    "title": "Listeler",
+    "subtitle": "",
+    "items": [
+      {
+        "id": 10,
+        "name": "Çok Kullanılan Hizmetler",
+        "subheading": "",
+        "image": "menu"
+      },
+      {
+        "id": 11,
+        "name": "Yeni Eklenen Hizmetler",
+        "subheading": "",
+        "image": "bell"
+      },
+      {
+        "id": 12,
+        "name": "Evrak Doğrulama Hizmetleri",
+        "subheading": "",
+        "image": "page"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "type": "bottom",
+    "title": "Barkodlu Belge İşlemleri",
+    "subtitle": "",
+    "items": [
+      {
+        "id": 13,
+        "name": "Barkodlu Belge Doğrulama",
+        "subheading": "e-Devlet üzerinden aldığınız barkodlu belgeleri doğrulayabilirsiniz.",
+        "image": "e-devlet_logo"
+      },
+      {
+        "id": 14,
+        "name": "Barkodlu Belge Almak İstiyorum",
+        "subheading": "Barkodlu belge oluşturabileceğiniz hizmetlere erişebilirsiniz.",
+        "image": "barkod"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "type": "bottom",
+    "title": "Keşfet",
+    "subtitle": "",
+    "items": [
+      {
+        "id": 15,
+        "name": "Şehrimde Ne Var?",
+        "subheading": "Şehrinizi seçin ve şehrinize özel hizmetleri listeleyin.",
+        "image": "konum"
+      },
+      {
+        "id": 16,
+        "name": "Merak Edilen Sorular",
+        "subheading": "Merak edilen sorulara erişebilirsiniz",
+        "image": "soru_isareti"
+      }
+    ]
+  }
+]
