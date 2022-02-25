@@ -1,4 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="BusDB" representedClassName="BusDB" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="fee" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="from" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="to" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PassengerDB" representedClassName="PassengerDB" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PassengerTicketDB" representedClassName="PassengerTicketDB" syncable="YES" codeGenerationType="class">
+        <attribute name="passengerId" optional="YES" attributeType="String"/>
+        <attribute name="pnrNo" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="SeatsDB" representedClassName="SeatsDB" syncable="YES" codeGenerationType="class">
+        <attribute name="pnrNo" optional="YES" attributeType="String"/>
+        <attribute name="seatNo" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="TicketDB" representedClassName="TicketDB" syncable="YES" codeGenerationType="class">
+        <attribute name="busId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="isBought" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="pnrNo" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="TicketDB" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="SeatsDB" positionX="-54" positionY="18" width="128" height="14"/>
+        <element name="PassengerDB" positionX="-36" positionY="36" width="128" height="74"/>
+        <element name="BusDB" positionX="-18" positionY="63" width="128" height="14"/>
+        <element name="PassengerTicketDB" positionX="0" positionY="108" width="128" height="59"/>
+    </elements>
 </model>

@@ -8,17 +8,15 @@
 import Foundation
 
 class Ticket{
+    var pnrNo: String
     var passenger: Passenger
-    var date: Date
-    var time: Time
     var isBought: Bool // reservation - bought
     var seatCount: Int = 0
     var seats: [Int] = []
     
-    init(passenger: Passenger, date: Date, time: Time, seats: [Int]){
+    init(pnrNo: String, passenger: Passenger, seats: [Int]){
+        self.pnrNo = pnrNo
         self.passenger = passenger
-        self.date = date
-        self.time = time
         self.seats = seats
         self.seatCount = seats.count
         self.isBought = false
@@ -29,7 +27,7 @@ class Ticket{
     }
     
     func seatPrint() -> String{
-        var msg = "\(passenger.printPassenger()), \(date.printDate()), \(time.printTime())"
+        var msg = "\(passenger.printPassenger())"
         for seat in seats{
             msg.append(", Seat \(seat)")
         }

@@ -14,6 +14,9 @@
 		A348924E27BA8C4D008D91BB /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = A348924D27BA8C4D008D91BB /* Time.swift */; };
 		A348925027BA95DB008D91BB /* Bus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A348924F27BA95DB008D91BB /* Bus.swift */; };
 		A34DF5B827BF54F500A25AF8 /* TicketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34DF5B727BF54F500A25AF8 /* TicketDetailViewController.swift */; };
+		A34EE66027C4BFD70035C92A /* CustomTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34EE65F27C4BFD70035C92A /* CustomTabbarViewController.swift */; };
+		A34EE66227C4F7FD0035C92A /* AddBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34EE66127C4F7FD0035C92A /* AddBusViewController.swift */; };
+		A34EE66427C4F8140035C92A /* CheckTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34EE66327C4F8140035C92A /* CheckTicketViewController.swift */; };
 		A398E53A27B5970300036523 /* RootOnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398E53927B5970300036523 /* RootOnboardViewController.swift */; };
 		A398E53D27B5C5CB00036523 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A398E53B27B5C5CB00036523 /* OnboardViewController.swift */; };
 		A398E53E27B5C5CB00036523 /* OnboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A398E53C27B5C5CB00036523 /* OnboardViewController.xib */; };
@@ -41,6 +44,9 @@
 		A348924D27BA8C4D008D91BB /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		A348924F27BA95DB008D91BB /* Bus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bus.swift; sourceTree = "<group>"; };
 		A34DF5B727BF54F500A25AF8 /* TicketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailViewController.swift; sourceTree = "<group>"; };
+		A34EE65F27C4BFD70035C92A /* CustomTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarViewController.swift; sourceTree = "<group>"; };
+		A34EE66127C4F7FD0035C92A /* AddBusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBusViewController.swift; sourceTree = "<group>"; };
+		A34EE66327C4F8140035C92A /* CheckTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTicketViewController.swift; sourceTree = "<group>"; };
 		A398E53927B5970300036523 /* RootOnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootOnboardViewController.swift; sourceTree = "<group>"; };
 		A398E53B27B5C5CB00036523 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		A398E53C27B5C5CB00036523 /* OnboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardViewController.xib; sourceTree = "<group>"; };
@@ -113,6 +119,9 @@
 				A3B6062827BC1F9D00251618 /* ShowBusViewController.swift */,
 				A3C0C9A827BC8C2800481C66 /* SetSeatsViewController.swift */,
 				A34DF5B727BF54F500A25AF8 /* TicketDetailViewController.swift */,
+				A34EE65F27C4BFD70035C92A /* CustomTabbarViewController.swift */,
+				A34EE66127C4F7FD0035C92A /* AddBusViewController.swift */,
+				A34EE66327C4F8140035C92A /* CheckTicketViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,11 +264,14 @@
 				A3C0C9A727BC862600481C66 /* Global.swift in Sources */,
 				A34DF5B827BF54F500A25AF8 /* TicketDetailViewController.swift in Sources */,
 				A3FE819727B58F6200BB9890 /* AppDelegate.swift in Sources */,
+				A34EE66027C4BFD70035C92A /* CustomTabbarViewController.swift in Sources */,
 				A3B6062927BC1F9D00251618 /* ShowBusViewController.swift in Sources */,
 				A3B6062D27BC234C00251618 /* BusCell.swift in Sources */,
+				A34EE66427C4F8140035C92A /* CheckTicketViewController.swift in Sources */,
 				A348924827BA8BF1008D91BB /* Ticket.swift in Sources */,
 				A3B6062127BBEC8200251618 /* CitiesViewController.swift in Sources */,
 				A348924C27BA8C40008D91BB /* Date.swift in Sources */,
+				A34EE66227C4F7FD0035C92A /* AddBusViewController.swift in Sources */,
 				A3FE819927B58F6200BB9890 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

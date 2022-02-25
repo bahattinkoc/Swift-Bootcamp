@@ -54,7 +54,6 @@ class Bus{
             list.append(_limit)
             _limit -= 1
         }
-        
-        addTicket(ticket: Ticket(passenger: Passenger(name: "Bahattin", surname: "Koç", id: 58), date: date, time: time, seats: list))
+        addTicket(ticket: Ticket(pnrNo: "PNR-AB\(id)\(date)\(time)", passenger: Passenger(name: "Bahattin", surname: "Koç", id: "58"), seats: list))
     }
 }

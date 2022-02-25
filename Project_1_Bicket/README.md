@@ -1,7 +1,9 @@
 Project 1 - Bicket
 :-------------------------:
 <img src="https://github.com/bahattinkoc/Homeworks/blob/main/Project_1_Bicket/bicket.gif" width="450" height="896">
-
+Bicket - Old             | New
+:-------------------------:|:-------------------------:
+![](https://github.com/bahattinkoc/Homeworks/blob/main/Project_1_Bicket/bicketOld.gif)  |  ![](https://github.com/bahattinkoc/Homeworks/blob/main/Project_1_Bicket/bicket.gif)
 
 # super.init() nedir? neden kullanırız?
 init metotları yapıların veya sınıfların başlangıç fonksiyonlarıdır. İlk değer atamaları vs bu fonksiyon içinde yapılır.

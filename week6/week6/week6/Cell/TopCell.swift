@@ -29,6 +29,7 @@ class TopCell: UICollectionViewCell, EDevletCellProtocol {
         
         title.font = UIFont.preferredFont(forTextStyle: .headline)
         title.textColor = .label
+        title.numberOfLines = 2
         
         let stackView = UIStackView(arrangedSubviews: [seperator, imageView, title])
         stackView.axis = .vertical
@@ -37,6 +38,8 @@ class TopCell: UICollectionViewCell, EDevletCellProtocol {
         stackView.spacing = 10
         
         containerView.addSubview(stackView)
+        
+        addSubview(containerView)
         
         //Autolayout
         NSLayoutConstraint.activate([
@@ -56,6 +59,6 @@ class TopCell: UICollectionViewCell, EDevletCellProtocol {
     func configure(with edevlet: EDevlet?) {
         // Nesne içeriğini burada
         title.text = edevlet?.name ?? ""
-        imageView.image = UIImage(systemName: "star") // resim eklenince değiştir
+        imageView.image = UIImage(systemName: edevlet?.image ?? "star") // resim eklenince değiştir
     }
 }

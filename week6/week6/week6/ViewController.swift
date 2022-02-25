@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let sections = Bundle.main.decode([Section].self, from: "edevlet1.json")
+    let sections = Bundle.main.decode([Section].self, from: "edevlet.json")
     var collectionView: UICollectionView!
     
     var datasource: UICollectionViewDiffableDataSource<Section, EDevlet>?
@@ -17,13 +17,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout)
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createCompositionalLayout())
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.backgroundColor = .systemBackground
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseIdentifier)
         collectionView.register(TopCell.self, forCellWithReuseIdentifier: TopCell.reuseIdentifier)
         collectionView.register(HighlightCell.self, forCellWithReuseIdentifier: HighlightCell.reuseIdentifier)
         collectionView.register(BottomCell.self, forCellWithReuseIdentifier: BottomCell.reuseIdentifier)
+        view.addSubview(collectionView)
         
-        //createDataSource()
+        createDataSource()
         reloadData()
     }
     
@@ -63,26 +66,78 @@ class ViewController: UIViewController {
         }
     }
     
-    private func createCompositionalLayout() {/*-> UICollectionViewLayout{
-        let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
+    private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem{
+        let layoutSectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(80))
+        let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutSectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        return layoutSectionHeader
+    }
+    
+    private func createTopSection() -> NSCollectionLayoutSection{
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.33))
+        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+        layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.66), heightDimension: .estimated(240))
+        let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [layoutItem]) // Horizontalı da dene
+        
+        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+        // Burada bilerek bir şeyi eksik bıraktım
+        layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+        let layoutSectionHeader = createSectionHeader()
+        layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+        
+        return layoutSection
+    }
+    
+    private func createHighligthSection() -> NSCollectionLayoutSection{
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5))
+        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+        layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .fractionalWidth(0.5))
+        let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [layoutItem]) // Horizontalı da dene
+        
+        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+        // Burada bilerek bir şeyi eksik bıraktım
+        layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+        let layoutSectionHeader = createSectionHeader()
+        layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+        
+        return layoutSection
+    }
+    
+    private func createBottomSection() -> NSCollectionLayoutSection{
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .fractionalHeight(0.5))
+        let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+        layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(200))
+        let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [layoutItem]) // Horizontalı da dene
+        
+        let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
+        // Burada bilerek bir şeyi eksik bıraktım
+        layoutSection.orthogonalScrollingBehavior = .groupPagingCentered
+        let layoutSectionHeader = createSectionHeader()
+        layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+        
+        return layoutSection
+    }
+    
+    private func createCompositionalLayout() -> UICollectionViewLayout{
+        let layout = UICollectionViewCompositionalLayout{ sectionIndex, layoutEnvironment in
             let section = self.sections[sectionIndex]
             
             switch section.type{
                 case "top":
-                    // return self.createTopSection()
-                    break
-                
+                     return self.createTopSection()
                 case "bottom":
-                    // return self.createBottomSection()
-                    break
-                    
+                     return self.createBottomSection()
                 default:
-                // return self.createHighligthSection()
-                    break
+                 return self.createHighligthSection()
             }
         }
         
-        return layout*/
+        return layout
     }
     
     // MARK: DiffableDataSource kavramını okuyunuz

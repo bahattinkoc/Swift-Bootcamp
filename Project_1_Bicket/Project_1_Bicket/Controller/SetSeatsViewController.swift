@@ -159,8 +159,10 @@ class SetSeatsViewController: UIViewController {
         let surname = surnameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if id != "" && name != "" && surname != ""{
-            Global.instance.selectedTicket = Ticket(passenger: Passenger(name: name!, surname: surname!, id: Int(id!) ?? 0), date: bus.date, time: bus.time, seats: selectedSeats)
+            let pnrNo = "PNR-\(Array(name!).first!)\(Array(surname!).first!)\(id!)\(bus.id)\(bus.date.day)\(bus.date.mounth)\(bus.date.year)\(bus.time.hour)\(bus.time.minute)"
+            Global.instance.selectedTicket = Ticket(pnrNo: pnrNo, passenger: Passenger(name: name!, surname: surname!, id: id!), seats: selectedSeats)
             let detailPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TicketDetailViewController")
+            UserDefaults.standard.set(false, forKey: "isPnr")
             navigationController?.pushViewController(detailPage, animated: true)
         } else {
             let alertView = UIAlertController(title: "Warning", message: "Please fill the blanks!", preferredStyle: .alert)

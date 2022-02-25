@@ -16,7 +16,7 @@ class SectionHeader: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        seperator.backgroundColor = .green
+        seperator.backgroundColor = .lightGray
         seperator.translatesAutoresizingMaskIntoConstraints = false // NSLayoutConstraint için gerekli
         
         title.textColor = .label
@@ -24,6 +24,7 @@ class SectionHeader: UICollectionReusableView {
         
         let stackView = UIStackView(arrangedSubviews: [seperator, title])
         stackView.axis = .vertical
+        stackView.spacing = 5
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(stackView)
