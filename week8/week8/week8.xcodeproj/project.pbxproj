@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A302BB2327CC1605001BF99B /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A302BB2227CC1605001BF99B /* Users.swift */; };
+		A303C26827CA219D00846CA1 /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303C26727CA219D00846CA1 /* Campaign.swift */; };
+		A303C26B27CA221D00846CA1 /* CampaignRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303C26A27CA221D00846CA1 /* CampaignRequest.swift */; };
+		A303C26D27CA270000846CA1 /* CampaignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A303C26C27CA270000846CA1 /* CampaignViewController.swift */; };
 		A34DF5F027C0F5C100A25AF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34DF5EF27C0F5C100A25AF8 /* AppDelegate.swift */; };
 		A34DF5F227C0F5C100A25AF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34DF5F127C0F5C100A25AF8 /* SceneDelegate.swift */; };
 		A34DF5F427C0F5C100A25AF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34DF5F327C0F5C100A25AF8 /* ViewController.swift */; };
@@ -21,9 +25,14 @@
 		A34DF61027C184DB00A25AF8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A34DF60F27C184DB00A25AF8 /* FirebaseDatabase */; };
 		A34DF61227C184DB00A25AF8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A34DF61127C184DB00A25AF8 /* FirebaseFirestore */; };
 		A34DF61427C184DB00A25AF8 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = A34DF61327C184DB00A25AF8 /* FirebaseMessaging */; };
+		A3E52D5527D283D20083B249 /* MainCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E52D5427D283D20083B249 /* MainCategories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A302BB2227CC1605001BF99B /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		A303C26727CA219D00846CA1 /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
+		A303C26A27CA221D00846CA1 /* CampaignRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignRequest.swift; sourceTree = "<group>"; };
+		A303C26C27CA270000846CA1 /* CampaignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignViewController.swift; sourceTree = "<group>"; };
 		A34DF5EC27C0F5C100A25AF8 /* week8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A34DF5EF27C0F5C100A25AF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A34DF5F127C0F5C100A25AF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +43,7 @@
 		A34DF5FE27C0F5C300A25AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A34DF60027C0F5C300A25AF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A34DF60627C0F5D700A25AF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A3E52D5427D283D20083B249 /* MainCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A303C26627CA1D5E00846CA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A303C26727CA219D00846CA1 /* Campaign.swift */,
+				A302BB2227CC1605001BF99B /* Users.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A303C26927CA220000846CA1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A303C26A27CA221D00846CA1 /* CampaignRequest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		A34DF5E327C0F5C100A25AF8 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +99,8 @@
 		A34DF5EE27C0F5C100A25AF8 /* week8 */ = {
 			isa = PBXGroup;
 			children = (
+				A303C26927CA220000846CA1 /* Service */,
+				A303C26627CA1D5E00846CA1 /* Model */,
 				A34DF5EF27C0F5C100A25AF8 /* AppDelegate.swift */,
 				A34DF5F127C0F5C100A25AF8 /* SceneDelegate.swift */,
 				A34DF5F327C0F5C100A25AF8 /* ViewController.swift */,
@@ -81,6 +110,8 @@
 				A34DF60027C0F5C300A25AF8 /* Info.plist */,
 				A34DF5F827C0F5C100A25AF8 /* week8.xcdatamodeld */,
 				A34DF60627C0F5D700A25AF8 /* GoogleService-Info.plist */,
+				A303C26C27CA270000846CA1 /* CampaignViewController.swift */,
+				A3E52D5427D283D20083B249 /* MainCategories.swift */,
 			);
 			path = week8;
 			sourceTree = "<group>";
@@ -168,9 +199,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A302BB2327CC1605001BF99B /* Users.swift in Sources */,
 				A34DF5F427C0F5C100A25AF8 /* ViewController.swift in Sources */,
+				A303C26B27CA221D00846CA1 /* CampaignRequest.swift in Sources */,
 				A34DF5F027C0F5C100A25AF8 /* AppDelegate.swift in Sources */,
+				A303C26D27CA270000846CA1 /* CampaignViewController.swift in Sources */,
+				A303C26827CA219D00846CA1 /* Campaign.swift in Sources */,
 				A34DF5FA27C0F5C100A25AF8 /* week8.xcdatamodeld in Sources */,
+				A3E52D5527D283D20083B249 /* MainCategories.swift in Sources */,
 				A34DF5F227C0F5C100A25AF8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
