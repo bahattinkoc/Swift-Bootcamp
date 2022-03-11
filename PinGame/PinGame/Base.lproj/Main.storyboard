@@ -1,24 +1,392 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="OnboardingViewController" customModule="PinGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ych-Fe-5q5">
+                                <rect key="frame" x="149.5" y="820" width="115.5" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="secondaryLabelColor"/>
+                                <color key="currentPageIndicatorTintColor" red="0.99996644258499146" green="0.0031516647431999445" blue="0.42075961828231812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydk-VR-lSk">
+                                <rect key="frame" x="0.0" y="44" width="52" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Skip"/>
+                                <connections>
+                                    <action selector="skipButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lqX-rO-aPH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6A-kW-Dg9">
+                                <rect key="frame" x="360" y="44" width="54" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SMY-b4-Rzb"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ych-Fe-5q5" secondAttribute="bottom" constant="16" id="0TU-Pl-1Cp"/>
+                            <constraint firstItem="ydk-VR-lSk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BkD-PD-yem"/>
+                            <constraint firstItem="S6A-kW-Dg9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TUB-7v-VJC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S6A-kW-Dg9" secondAttribute="trailing" id="Uvk-wD-O6i"/>
+                            <constraint firstItem="ydk-VR-lSk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="igL-7M-60P"/>
+                            <constraint firstItem="Ych-Fe-5q5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pYx-gq-bvv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="S6A-kW-Dg9" id="XdO-mM-Zi8"/>
+                        <outlet property="pageControl" destination="Ych-Fe-5q5" id="gem-uz-sYI"/>
+                        <outlet property="skipButton" destination="ydk-VR-lSk" id="0Vf-pR-eu4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
+        </scene>
+        <!--Search ListVC-->
+        <scene sceneID="z1C-GY-2iy">
+            <objects>
+                <viewController storyboardIdentifier="SearchListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4f-pU-37V" customClass="SearchListVC" customModule="PinGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qai-VX-WVr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="91U-RQ-1yu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rUn-Hz-tQo"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="I4f-pU-37V" id="2kw-51-aVh"/>
+                                </connections>
+                            </searchBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VDF-6v-GYO">
+                                <rect key="frame" x="0.0" y="138" width="414" height="675"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CMS-6l-fVj">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                                        <subviews>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pBV-gt-7yt">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                                                <color key="pageIndicatorTintColor" systemColor="secondaryLabelColor"/>
+                                                <color key="currentPageIndicatorTintColor" systemColor="systemPurpleColor"/>
+                                            </pageControl>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notfound" translatesAutoresizingMaskIntoConstraints="NO" id="NGe-FT-R3j">
+                                        <rect key="frame" x="0.0" y="71" width="414" height="200"/>
+                                    </imageView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ME4-g0-sgq">
+                                        <rect key="frame" x="0.0" y="271" width="414" height="404"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JL5-N9-x3j">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="I4f-pU-37V" id="vkj-yp-g2h"/>
+                                            <outlet property="delegate" destination="I4f-pU-37V" id="pej-W7-0nY"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="NGe-FT-R3j" firstAttribute="leading" secondItem="VDF-6v-GYO" secondAttribute="leading" id="AMF-RL-0OP"/>
+                                    <constraint firstAttribute="trailing" secondItem="NGe-FT-R3j" secondAttribute="trailing" id="FXu-mp-Odt"/>
+                                    <constraint firstItem="ME4-g0-sgq" firstAttribute="top" secondItem="NGe-FT-R3j" secondAttribute="bottom" id="Uyw-Mx-LnP"/>
+                                    <constraint firstItem="NGe-FT-R3j" firstAttribute="top" secondItem="CMS-6l-fVj" secondAttribute="bottom" id="a3F-Mc-Yha"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sou-hx-oTe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="91U-RQ-1yu" firstAttribute="leading" secondItem="sou-hx-oTe" secondAttribute="leading" id="6RP-nH-PGo"/>
+                            <constraint firstItem="91U-RQ-1yu" firstAttribute="top" secondItem="sou-hx-oTe" secondAttribute="top" id="6YE-WO-iPo"/>
+                            <constraint firstItem="VDF-6v-GYO" firstAttribute="leading" secondItem="sou-hx-oTe" secondAttribute="leading" id="Mg4-oH-B82"/>
+                            <constraint firstItem="91U-RQ-1yu" firstAttribute="trailing" secondItem="sou-hx-oTe" secondAttribute="trailing" id="Zgi-Sh-qIh"/>
+                            <constraint firstItem="sou-hx-oTe" firstAttribute="bottom" secondItem="VDF-6v-GYO" secondAttribute="bottom" id="ecO-sa-hbK"/>
+                            <constraint firstItem="VDF-6v-GYO" firstAttribute="top" secondItem="91U-RQ-1yu" secondAttribute="bottom" id="lLT-FW-EU3"/>
+                            <constraint firstItem="sou-hx-oTe" firstAttribute="trailing" secondItem="VDF-6v-GYO" secondAttribute="trailing" id="tDQ-wA-rxX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8gF-cK-NJu"/>
+                    <connections>
+                        <outlet property="headerStackView" destination="CMS-6l-fVj" id="Mh9-uE-6a1"/>
+                        <outlet property="listCollectionView" destination="ME4-g0-sgq" id="ax7-6q-wbl"/>
+                        <outlet property="notFoundImageView" destination="NGe-FT-R3j" id="DkQ-oc-bQ9"/>
+                        <outlet property="pageControl" destination="pBV-gt-7yt" id="Us5-bb-OgQ"/>
+                        <outlet property="searchBar" destination="91U-RQ-1yu" id="8ZI-rh-CSv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHe-Rh-tDX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1911.594202898551" y="796.875"/>
+        </scene>
+        <!--FavoritesVC-->
+        <scene sceneID="TEX-qP-kCi">
+            <objects>
+                <viewController storyboardIdentifier="FavoritesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EWu-NL-7aU" customClass="FavoritesVC" customModule="PinGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UGq-SN-xjM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="pc5-UC-Z5g">
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pUB-Dq-BnC"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EWu-NL-7aU" id="maF-oU-23e"/>
+                                </connections>
+                            </searchBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rSf-H6-P7f">
+                                <rect key="frame" x="0.0" y="138" width="414" height="675"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notfound" translatesAutoresizingMaskIntoConstraints="NO" id="Yti-wc-fO6">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    </imageView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="i6g-Wv-lXu">
+                                        <rect key="frame" x="0.0" y="200" width="414" height="475"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="06r-LX-G0A">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="EWu-NL-7aU" id="NSs-OQ-Lsa"/>
+                                            <outlet property="delegate" destination="EWu-NL-7aU" id="4bP-mk-z1S"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gct-y0-tnR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gct-y0-tnR" firstAttribute="bottom" secondItem="rSf-H6-P7f" secondAttribute="bottom" id="2bf-5B-GPR"/>
+                            <constraint firstItem="rSf-H6-P7f" firstAttribute="leading" secondItem="gct-y0-tnR" secondAttribute="leading" id="6Hu-Fq-ooA"/>
+                            <constraint firstItem="rSf-H6-P7f" firstAttribute="top" secondItem="pc5-UC-Z5g" secondAttribute="bottom" id="eLu-Qr-hO8"/>
+                            <constraint firstItem="pc5-UC-Z5g" firstAttribute="top" secondItem="gct-y0-tnR" secondAttribute="top" id="hN5-Ch-o22"/>
+                            <constraint firstItem="pc5-UC-Z5g" firstAttribute="trailing" secondItem="gct-y0-tnR" secondAttribute="trailing" id="ogX-Cr-Fgz"/>
+                            <constraint firstItem="pc5-UC-Z5g" firstAttribute="leading" secondItem="gct-y0-tnR" secondAttribute="leading" id="s45-PB-4FL"/>
+                            <constraint firstItem="gct-y0-tnR" firstAttribute="trailing" secondItem="rSf-H6-P7f" secondAttribute="trailing" id="uU3-DI-QAI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ohb-rz-Tn9"/>
+                    <connections>
+                        <outlet property="collectionView" destination="i6g-Wv-lXu" id="CNd-IA-j3M"/>
+                        <outlet property="notFoundImageView" destination="Yti-wc-fO6" id="RFw-nf-4SQ"/>
+                        <outlet property="searchBar" destination="pc5-UC-Z5g" id="P79-L6-vsp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mkk-Hc-xYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1911.594202898551" y="1514.7321428571429"/>
+        </scene>
+        <!--Detail PageVC-->
+        <scene sceneID="aE9-uo-6j5">
+            <objects>
+                <viewController storyboardIdentifier="DetailPageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jrn-26-aQ8" customClass="DetailPageVC" customModule="PinGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fyR-cs-3U5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgz-Ig-mbb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hf8-Uf-cpX">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yhq-ma-Qgt">
+                                        <rect key="frame" x="354" y="141.5" width="50" height="47.5"/>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Kwb-te-qBa"/>
+                                            <constraint firstAttribute="width" constant="50" id="Tur-Fe-0VU"/>
+                                        </constraints>
+                                        <imageReference key="highlightedImage" image="hand.thumbsup.fill" catalog="system" symbolScale="large" renderingMode="original"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="hf8-Uf-cpX" firstAttribute="top" secondItem="mgz-Ig-mbb" secondAttribute="top" id="4jN-70-Vq6"/>
+                                    <constraint firstAttribute="bottom" secondItem="hf8-Uf-cpX" secondAttribute="bottom" id="D41-lF-eYi"/>
+                                    <constraint firstItem="hf8-Uf-cpX" firstAttribute="leading" secondItem="mgz-Ig-mbb" secondAttribute="leading" id="J8I-JW-b5e"/>
+                                    <constraint firstAttribute="height" constant="200" id="KBE-jV-mdn"/>
+                                    <constraint firstAttribute="trailing" secondItem="yhq-ma-Qgt" secondAttribute="trailing" constant="10" id="UJW-rb-Cee"/>
+                                    <constraint firstAttribute="trailing" secondItem="hf8-Uf-cpX" secondAttribute="trailing" id="Zgn-yL-pvB"/>
+                                    <constraint firstAttribute="bottom" secondItem="yhq-ma-Qgt" secondAttribute="bottom" constant="10" id="n7h-bq-0BJ"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DHf-1h-B6v">
+                                <rect key="frame" x="10" y="254" width="394" height="608"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJL-35-O4t">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaV-9n-IcI">
+                                        <rect key="frame" x="0.0" y="29" width="394" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5H-Q8-YtB">
+                                        <rect key="frame" x="0.0" y="54.5" width="394" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="He2-pV-xTQ">
+                                        <rect key="frame" x="0.0" y="80" width="394" height="528"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Harut MarutAllah tarafından Babil’e gönderilen iki melektir. Onlar görevleri ise insanlara büyüyü öğretmektir. Büyü öğrenmek isteyen kişilere ise öncelikli olarak bunun karşılığında cehenneme gideceklerini söyleyen Harut ve Marut yalnızca bunu kabul etmeleri üzerine büyüyü öğretmekteydi. Cehennemi kabul eden birçok insan onların öğretmiş olduğu büyüyü yaparak kendilerini lanetlediler. Bazı anlatımlara göre Harut ve Marut aslında insanın nefsi olarak gönderilmişti. Bu duruma dair farklı rivayetler bulunmakla birlikte anlatılan bir hikâyede ise Harut veMarut aralarında sohbet etmekte olan iki melek olarak belirtilmektedir.
+
+Bu iki melek sohbet ederken insanlar yerine kendilerinin duygu sahibi olarak yaratılmış olsalardı sürekli ibadet ile günlerini geçirecek olduklarını belirtmişlerdir. Bunun üzerine ise Allah Onlara şehvet duygusunu verdiğinde insanlardan çok daha fazla günah işleyeceklerini belirtmiştir. Fakat ne olursa olsun bu iki melek kendilerine sonsuz güven duyuyorlarmış.  Bunun üzerine ise istedikleri gibi Allah onlara şehvet duygusunu vermiş ve daha sonrasında ise onları dünya üzerine göndermiş. Dünyaya inen Harut ve Marut bir kadın görmüşler. Kadın ile birlikte olmayı istemeleri üzerine ise kadın onlara üç seçenek sunarak bunlardan birini yaptığınız takdirde sizinle birlikte olurum demiş. Bu üç seçenekten biri kocasını öldürmek iken diğeri puta tapmak ve bir diğeri ise şarap içmekmiş. Harut ve Marut ise üçüncü seçenek olan şarap içmeyi tercih etmişler.Harut MarutAllah tarafından Babil’e gönderilen iki melektir. Onlar görevleri ise insanlara büyüyü öğretmektir. Büyü öğrenmek isteyen kişilere ise öncelikli olarak bunun karşılığında cehenneme gideceklerini söyleyen Harut ve Marut yalnızca bunu kabul etmeleri üzerine büyüyü öğretmekteydi. Cehennemi kabul eden birçok insan onların öğretmiş olduğu büyüyü yaparak kendilerini lanetlediler. Bazı anlatımlara göre Harut ve Marut aslında insanın nefsi olarak gönderilmişti. Bu duruma dair farklı rivayetler bulunmakla birlikte anlatılan bir hikâyede ise Harut veMarut aralarında sohbet etmekte olan iki melek olarak belirtilmektedir.
+
+Bu iki melek sohbet ederken insanlar yerine kendilerinin duygu sahibi olarak yaratılmış olsalardı sürekli ibadet ile günlerini geçirecek olduklarını belirtmişlerdir. Bunun üzerine ise Allah Onlara şehvet duygusunu verdiğinde insanlardan çok daha fazla günah işleyeceklerini belirtmiştir. Fakat ne olursa olsun bu iki melek kendilerine sonsuz güven duyuyorlarmış.  Bunun üzerine ise istedikleri gibi Allah onlara şehvet duygusunu vermiş ve daha sonrasında ise onları dünya üzerine göndermiş. Dünyaya inen Harut ve Marut bir kadın görmüşler. Kadın ile birlikte olmayı istemeleri üzerine ise kadın onlara üç seçenek sunarak bunlardan birini yaptığınız takdirde sizinle birlikte olurum demiş. Bu üç seçenekten biri kocasını öldürmek iken diğeri puta tapmak ve bir diğeri ise şarap içmekmiş. Harut ve Marut ise üçüncü seçenek olan şarap içmeyi tercih etmişler.Harut MarutAllah tarafından Babil’e gönderilen iki melektir. Onlar görevleri ise insanlara büyüyü öğretmektir. Büyü öğrenmek isteyen kişilere ise öncelikli olarak bunun karşılığında cehenneme gideceklerini söyleyen Harut ve Marut yalnızca bunu kabul etmeleri üzerine büyüyü öğretmekteydi. Cehennemi kabul eden birçok insan onların öğretmiş olduğu büyüyü yaparak kendilerini lanetlediler. Bazı anlatımlara göre Harut ve Marut aslında insanın nefsi olarak gönderilmişti. Bu duruma dair farklı rivayetler bulunmakla birlikte anlatılan bir hikâyede ise Harut veMarut aralarında sohbet etmekte olan iki melek olarak belirtilmektedir.
+
+Bu iki melek sohbet ederken insanlar yerine kendilerinin duygu sahibi olarak yaratılmış olsalardı sürekli ibadet ile günlerini geçirecek olduklarını belirtmişlerdir. Bunun üzerine ise Allah Onlara şehvet duygusunu verdiğinde insanlardan çok daha fazla günah işleyeceklerini belirtmiştir. Fakat ne olursa olsun bu iki melek kendilerine sonsuz güven duyuyorlarmış.  Bunun üzerine ise istedikleri gibi Allah onlara şehvet duygusunu vermiş ve daha sonrasında ise onları dünya üzerine göndermiş. Dünyaya inen Harut ve Marut bir kadın görmüşler. Kadın ile birlikte olmayı istemeleri üzerine ise kadın onlara üç seçenek sunarak bunlardan birini yaptığınız takdirde sizinle birlikte olurum demiş. Bu üç seçenekten biri kocasını öldürmek iken diğeri puta tapmak ve bir diğeri ise şarap içmekmiş. Harut ve Marut ise üçüncü seçenek olan şarap içmeyi tercih etmişler.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hbE-Uf-ykA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mgz-Ig-mbb" firstAttribute="top" secondItem="hbE-Uf-ykA" secondAttribute="top" id="3Sc-xC-HXg"/>
+                            <constraint firstItem="DHf-1h-B6v" firstAttribute="leading" secondItem="hbE-Uf-ykA" secondAttribute="leading" constant="10" id="6bJ-wE-8y8"/>
+                            <constraint firstItem="hbE-Uf-ykA" firstAttribute="trailing" secondItem="DHf-1h-B6v" secondAttribute="trailing" constant="10" id="ITh-ha-0YV"/>
+                            <constraint firstItem="hbE-Uf-ykA" firstAttribute="trailing" secondItem="mgz-Ig-mbb" secondAttribute="trailing" id="PB6-vU-dAj"/>
+                            <constraint firstItem="mgz-Ig-mbb" firstAttribute="leading" secondItem="hbE-Uf-ykA" secondAttribute="leading" id="RuY-9r-7zL"/>
+                            <constraint firstItem="DHf-1h-B6v" firstAttribute="top" secondItem="mgz-Ig-mbb" secondAttribute="bottom" constant="10" id="p0X-XZ-ZMX"/>
+                            <constraint firstItem="hbE-Uf-ykA" firstAttribute="bottom" secondItem="DHf-1h-B6v" secondAttribute="bottom" id="wbh-fj-l2w"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailTextView" destination="He2-pV-xTQ" id="jWg-VF-MGb"/>
+                        <outlet property="gameImageView" destination="hf8-Uf-cpX" id="NHC-BV-S5W"/>
+                        <outlet property="likeImageView" destination="yhq-ma-Qgt" id="Un3-VO-XDA"/>
+                        <outlet property="metacriticLabel" destination="s5H-Q8-YtB" id="qRV-r9-x32"/>
+                        <outlet property="nameLabel" destination="qJL-35-O4t" id="Ejd-Zu-ZJB"/>
+                        <outlet property="releaseLabel" destination="QaV-9n-IcI" id="Edz-xz-f2s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Dy-Z0-Qot" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2795.6521739130435" y="796.875"/>
+        </scene>
+        <!--Custom TabbarVC-->
+        <scene sceneID="xL1-Uk-n6d">
+            <objects>
+                <tabBarController storyboardIdentifier="TabbarVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X0N-EA-rED" customClass="CustomTabbarVC" customModule="PinGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fy3-hf-DU1">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1dZ-x5-m8j" kind="relationship" relationship="viewControllers" id="0rI-U7-gc0"/>
+                        <segue destination="0aq-4a-SuE" kind="relationship" relationship="viewControllers" id="Dfy-sI-Ej7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qtb-1N-IuG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="797"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="pS5-2N-MQc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1dZ-x5-m8j" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="kfR-UZ-Zjc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nzN-Rb-c0f">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I4f-pU-37V" kind="relationship" relationship="rootViewController" id="1mM-xw-k1J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q04-d7-QwA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="797"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="Eqf-Uz-815">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0aq-4a-SuE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="KqE-Av-eA7"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bCC-bN-mMe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EWu-NL-7aU" kind="relationship" relationship="rootViewController" id="2Hb-1Z-9ju"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aqe-dT-IcH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971" y="1515"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hand.thumbsup.fill" catalog="system" width="128" height="121"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="notfound" width="200" height="200"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
