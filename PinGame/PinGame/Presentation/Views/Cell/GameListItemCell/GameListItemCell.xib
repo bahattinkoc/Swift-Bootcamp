@@ -26,15 +26,17 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kMf-5H-seM">
                                         <rect key="frame" x="10" y="10" width="80" height="71"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="71" id="0LY-PX-MgN"/>
+                                            <constraint firstAttribute="width" constant="80" id="gxe-u9-3uG"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="0Em-Ne-E7W"/>
-                                    <constraint firstItem="kMf-5H-seM" firstAttribute="top" secondItem="1Z8-wu-ihg" secondAttribute="top" constant="10" id="KM7-e4-dlw"/>
-                                    <constraint firstAttribute="trailing" secondItem="kMf-5H-seM" secondAttribute="trailing" constant="10" id="M8n-hi-gK4"/>
-                                    <constraint firstItem="kMf-5H-seM" firstAttribute="leading" secondItem="1Z8-wu-ihg" secondAttribute="leading" constant="10" id="cem-Wl-GHu"/>
-                                    <constraint firstAttribute="bottom" secondItem="kMf-5H-seM" secondAttribute="bottom" constant="10" id="sIA-WV-dMO"/>
+                                    <constraint firstItem="kMf-5H-seM" firstAttribute="centerX" secondItem="1Z8-wu-ihg" secondAttribute="centerX" id="Fsq-hw-xze"/>
+                                    <constraint firstItem="kMf-5H-seM" firstAttribute="centerY" secondItem="1Z8-wu-ihg" secondAttribute="centerY" id="yuT-fl-M2a"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ump-uU-ULj">
@@ -89,8 +91,8 @@
             <connections>
                 <outlet property="imageView" destination="kMf-5H-seM" id="m8X-YU-T47"/>
                 <outlet property="nameLabel" destination="KNB-1D-rl4" id="9Ap-Wr-Tea"/>
-                <outlet property="ratingLabel" destination="Bmo-ED-ngc" id="dbF-nI-Vco"/>
                 <outlet property="ratingStackView" destination="vsW-mg-ggd" id="qEs-Ye-4p4"/>
+                <outlet property="releaseLabel" destination="Bmo-ED-ngc" id="4Ba-Kv-U7e"/>
             </connections>
             <point key="canvasLocation" x="345.6521739130435" y="88.058035714285708"/>
         </collectionViewCell>

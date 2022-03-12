@@ -5,14 +5,12 @@
 //  Created by Bahattin Koç on 9.03.2022.
 //
 
-import Foundation
-
-struct GameList: Decodable{
+struct GameList: Decodable {
     let next: String?
     let results: [Results]?
 }
 
-struct Results: Decodable{
+struct Results: Decodable {
     let id: Int?
     let name: String?
     let background_image: String?
@@ -21,8 +19,7 @@ struct Results: Decodable{
     let metacritic: Int?
 }
 
-
-struct GameDetail: Decodable{
+struct GameDetail: Decodable {
     let id: Int?
     let name: String?
     let description: String?

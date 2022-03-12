@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Slide{
+struct Slide {
     let imageTxt: String
     let title: String
     let detail: String

@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ych-Fe-5q5">
-                                <rect key="frame" x="149.5" y="820" width="115.5" height="26"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ych-Fe-5q5">
+                                <rect key="frame" x="141" y="820" width="132.5" height="26"/>
                                 <color key="pageIndicatorTintColor" systemColor="secondaryLabelColor"/>
                                 <color key="currentPageIndicatorTintColor" red="0.99996644258499146" green="0.0031516647431999445" blue="0.42075961828231812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
@@ -233,18 +232,17 @@
                                             <constraint firstAttribute="height" constant="50" id="Kwb-te-qBa"/>
                                             <constraint firstAttribute="width" constant="50" id="Tur-Fe-0VU"/>
                                         </constraints>
-                                        <imageReference key="highlightedImage" image="hand.thumbsup.fill" catalog="system" symbolScale="large" renderingMode="original"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="hf8-Uf-cpX" firstAttribute="top" secondItem="mgz-Ig-mbb" secondAttribute="top" id="4jN-70-Vq6"/>
+                                    <constraint firstAttribute="bottom" secondItem="yhq-ma-Qgt" secondAttribute="bottom" constant="10" id="BNK-qB-LIE"/>
                                     <constraint firstAttribute="bottom" secondItem="hf8-Uf-cpX" secondAttribute="bottom" id="D41-lF-eYi"/>
                                     <constraint firstItem="hf8-Uf-cpX" firstAttribute="leading" secondItem="mgz-Ig-mbb" secondAttribute="leading" id="J8I-JW-b5e"/>
                                     <constraint firstAttribute="height" constant="200" id="KBE-jV-mdn"/>
-                                    <constraint firstAttribute="trailing" secondItem="yhq-ma-Qgt" secondAttribute="trailing" constant="10" id="UJW-rb-Cee"/>
                                     <constraint firstAttribute="trailing" secondItem="hf8-Uf-cpX" secondAttribute="trailing" id="Zgn-yL-pvB"/>
-                                    <constraint firstAttribute="bottom" secondItem="yhq-ma-Qgt" secondAttribute="bottom" constant="10" id="n7h-bq-0BJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="yhq-ma-Qgt" secondAttribute="trailing" constant="10" id="niR-OG-vdI"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DHf-1h-B6v">
@@ -259,17 +257,23 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaV-9n-IcI">
                                         <rect key="frame" x="0.0" y="29" width="394" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5H-Q8-YtB">
                                         <rect key="frame" x="0.0" y="54.5" width="394" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1L-S0-QNT">
+                                        <rect key="frame" x="0.0" y="80" width="394" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="He2-pV-xTQ">
-                                        <rect key="frame" x="0.0" y="80" width="394" height="528"/>
+                                        <rect key="frame" x="0.0" y="109" width="394" height="499"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Harut MarutAllah tarafından Babil’e gönderilen iki melektir. Onlar görevleri ise insanlara büyüyü öğretmektir. Büyü öğrenmek isteyen kişilere ise öncelikli olarak bunun karşılığında cehenneme gideceklerini söyleyen Harut ve Marut yalnızca bunu kabul etmeleri üzerine büyüyü öğretmekteydi. Cehennemi kabul eden birçok insan onların öğretmiş olduğu büyüyü yaparak kendilerini lanetlediler. Bazı anlatımlara göre Harut ve Marut aslında insanın nefsi olarak gönderilmişti. Bu duruma dair farklı rivayetler bulunmakla birlikte anlatılan bir hikâyede ise Harut veMarut aralarında sohbet etmekte olan iki melek olarak belirtilmektedir.
 
@@ -369,7 +373,6 @@ Bu iki melek sohbet ederken insanlar yerine kendilerinin duygu sahibi olarak yar
         </scene>
     </scenes>
     <resources>
-        <image name="hand.thumbsup.fill" catalog="system" width="128" height="121"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="notfound" width="200" height="200"/>
