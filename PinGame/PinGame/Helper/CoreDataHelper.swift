@@ -76,11 +76,18 @@ final class CoreDataHelper {
         item.setValue(isLike, forKey: "isLike")
         
         // do-catch kullanılmadan guard ile yapılabilir mi?
-        do {
-            try (CoreDataHelper.instance.context as! NSManagedObjectContext).save()
-        } catch let error as NSError {
-            print(error)
+        ///////////////////
+        guard let context = CoreDataHelper.instance.context as? NSManagedObjectContext,
+              let _ = try? context.save() else {
+            print("Update failed.")
+            return
         }
+        
+//        do {
+//            try (CoreDataHelper.instance.context as! NSManagedObjectContext).save()
+//        } catch let error as NSError {
+//            print(error)
+//        }
     }
 
     func pullGameList(_ page: Int = 1) {

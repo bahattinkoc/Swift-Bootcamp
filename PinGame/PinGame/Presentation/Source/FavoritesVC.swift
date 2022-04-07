@@ -9,9 +9,9 @@ import UIKit
 
 final class FavoritesVC: UIViewController {
 
-    @IBOutlet weak var notFoundImageView: UIImageView!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet private weak var notFoundImageView: UIImageView!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var searchBar: UISearchBar!
     
     // MARK - PROPERTIES
     
@@ -44,13 +44,12 @@ final class FavoritesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.title = "Favorite Games"
     }
     
     // MARK: - PRIVATE FUNCTIONS
     
-    private func loadFavoriteGames(){
+    private func loadFavoriteGames() {
         favoriteGames.removeAll()
         
         CoreDataHelper.instance.games.forEach { item in
@@ -62,7 +61,7 @@ final class FavoritesVC: UIViewController {
         favoriteGames.isEmpty ? setHidden(notFound: false, collectionView: true) : setHidden(notFound: true, collectionView: false)
     }
     
-    private func setHidden(notFound: Bool, collectionView: Bool){
+    private func setHidden(notFound: Bool, collectionView: Bool) {
         notFoundImageView.isHidden = notFound
         self.collectionView.isHidden = collectionView
     }
@@ -70,39 +69,38 @@ final class FavoritesVC: UIViewController {
 
 // MARK: - EXTENSIONS
 
-extension FavoritesVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+extension FavoritesVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return isFiltered ? filteredFavoriteGames.count : favoriteGames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameItemCell", for: indexPath) as? GameListItemCell else { return .init() }
-        cell.configure(model: (isFiltered) ? filteredFavoriteGames[indexPath.row] : favoriteGames[indexPath.row])
+        cell.configure(model: isFiltered ? filteredFavoriteGames[indexPath.row] : favoriteGames[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.frame.size.width), height: 75)
+        return CGSize(width: collectionView.frame.size.width, height: 75)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        CoreDataHelper.instance.selectedGame = (isFiltered) ? filteredFavoriteGames[indexPath.row] : favoriteGames[indexPath.row]
+        CoreDataHelper.instance.selectedGame = isFiltered ? filteredFavoriteGames[indexPath.row] : favoriteGames[indexPath.row]
         pushVC(storyboardName: "Main", storyboardId: .detailPageVC)
     }
 }
 
-
 extension FavoritesVC: UISearchBarDelegate{
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.isFiltered = false
+        isFiltered = false
         notFoundImageView.isHidden = true
         searchBar.text = ""
         collectionView.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.trimmingCharacters(in: .whitespacesAndNewlines) != "" && searchText.trimmingCharacters(in: .whitespacesAndNewlines).count >= 3{
-            filteredFavoriteGames = favoriteGames.filter({ (game: GameItem) in
+        if searchText.trimmingCharacters(in: .whitespacesAndNewlines) != "" && searchText.trimmingCharacters(in: .whitespacesAndNewlines).count >= 3 {
+            filteredFavoriteGames = favoriteGames.filter({ game in
                 return game.name.localizedLowercase.contains(searchText.localizedLowercase)
             })
             

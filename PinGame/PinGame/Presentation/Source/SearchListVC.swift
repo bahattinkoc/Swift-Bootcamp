@@ -66,9 +66,7 @@ final class SearchListVC: UIViewController {
         }
         
         syncArrays()
-        
         preparePageControl()
-        
         prepareHeaderPageVC()
         
         timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { (timer) in
@@ -78,7 +76,6 @@ final class SearchListVC: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
         timer.invalidate()
     }
     
@@ -115,7 +112,7 @@ final class SearchListVC: UIViewController {
     }
     
     private func itemSelectForDetail() {
-        if CoreDataHelper.instance.selectedGame?.description == ""{
+        if CoreDataHelper.instance.selectedGame?.description.isEmpty ?? false {
             let loadingIndicator = UIActivityIndicatorView().getDefaultIndicatorView()
             
             alert.view.addSubview(loadingIndicator)
@@ -130,7 +127,7 @@ final class SearchListVC: UIViewController {
         }
     }
     
-    private func setHidden(notFound: Bool, collectionView: Bool, header: Bool){
+    private func setHidden(notFound: Bool, collectionView: Bool, header: Bool) {
         self.notFoundImageView.isHidden = notFound
         self.listCollectionView.isHidden = collectionView
         self.headerStackView.isHidden = header
@@ -138,7 +135,7 @@ final class SearchListVC: UIViewController {
     
     // MARK: - ObjectiveC
     
-    @objc func endLoadDescription(notification: Notification) {
+    @objc private func endLoadDescription(notification: Notification) {
         DispatchQueue.main.async {
             self.alert.dismiss(animated: true, completion: nil)
             
@@ -149,9 +146,9 @@ final class SearchListVC: UIViewController {
         }
     }
     
-    @objc func reloadData(notification: Notification) {
-        self.alert.dismiss(animated: true, completion: nil)
-        self.games = CoreDataHelper.instance.games
+    @objc private func reloadData(notification: Notification) {
+        alert.dismiss(animated: true, completion: nil)
+        games = CoreDataHelper.instance.games
     }
 }
 
@@ -176,12 +173,12 @@ extension SearchListVC: UIPageViewControllerDataSource, UIPageViewControllerDele
 
 extension SearchListVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (isFiltered) ? filteredGames.count : games.count
+        return isFiltered ? filteredGames.count : games.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameItemCell", for: indexPath) as? GameListItemCell else { return UICollectionViewCell() }
-        cell.configure(model: (isFiltered) ? filteredGames[indexPath.row] : games[indexPath.row])
+        cell.configure(model: isFiltered ? filteredGames[indexPath.row] : games[indexPath.row])
         return cell
     }
     
@@ -190,25 +187,22 @@ extension SearchListVC: UICollectionViewDataSource, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        CoreDataHelper.instance.selectedGame = (isFiltered) ? filteredGames[indexPath.row] : games[indexPath.row]
+        CoreDataHelper.instance.selectedGame = isFiltered ? filteredGames[indexPath.row] : games[indexPath.row]
         selectedGameId = CoreDataHelper.instance.selectedGame?.id
         itemSelectForDetail()
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if !isFiltered {
-            if (indexPath.row == games.count - 1) {
-                CoreDataHelper.instance.currentPagingPageNumber += 1
-                UserDefaults.standard.set(CoreDataHelper.instance.currentPagingPageNumber, forKey: UserDefaultNames.currentPagingPageNumber)
-                
-                let loadingIndicator = UIActivityIndicatorView().getDefaultIndicatorView()
-                
-                alert.view.addSubview(loadingIndicator)
-                present(alert, animated: true) {
-                    DispatchQueue.main.async {
-                        // Oyuna ait detaili çek
-                        CoreDataHelper.instance.pullGameList(CoreDataHelper.instance.currentPagingPageNumber)
-                    }
+        if !isFiltered, indexPath.row == games.count - 1 {
+            CoreDataHelper.instance.currentPagingPageNumber += 1
+            UserDefaults.standard.set(CoreDataHelper.instance.currentPagingPageNumber, forKey: UserDefaultNames.currentPagingPageNumber)
+            
+            let loadingIndicator = UIActivityIndicatorView().getDefaultIndicatorView()
+            alert.view.addSubview(loadingIndicator)
+            present(alert, animated: true) {
+                DispatchQueue.main.async {
+                    // Oyuna ait detaili çek
+                    CoreDataHelper.instance.pullGameList(CoreDataHelper.instance.currentPagingPageNumber)
                 }
             }
         }
@@ -225,7 +219,7 @@ extension SearchListVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.trimmingCharacters(in: .whitespacesAndNewlines) != "" && searchText.trimmingCharacters(in: .whitespacesAndNewlines).count >= 3 {
-            filteredGames = games.filter({ (game: GameItem) in
+            filteredGames = games.filter({ game in
                 return game.name.localizedLowercase.contains(searchText.localizedLowercase)
             })
             

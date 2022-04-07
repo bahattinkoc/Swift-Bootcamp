@@ -22,14 +22,14 @@ struct Coin: Decodable {
     let iconUrl: String?
     let marketCap: String?
     let price: String?
-    let listedAt: CLong?
+    let listedAt: Int?
     let tier: Int?
     let change: String?
     let rank: Int?
     let lowVolume: Bool?
     let coinrankingUrl: String?
     let the24hVolume: String?
-    let btcPrice: Double?
+    let btcPrice: String?
     let sparkline: [String]?
 }
 

@@ -9,9 +9,9 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
 
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var skipButton: UIButton!
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet private weak var nextButton: UIButton!
+    @IBOutlet private weak var skipButton: UIButton!
+    @IBOutlet private weak var pageControl: UIPageControl!
     
     private var timer = Timer()
     private var slides = [SlideVC]()
@@ -25,8 +25,8 @@ final class OnboardingViewController: UIViewController {
         
         loadSlides()
         // onboardingin otomatik olarak 3sn de bir sonraki sayfaya geçiş yapması
-        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { (timer) in
-            self.nextPage(buttonClick: false)
+        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { [weak self] timer in
+            self?.nextPage(buttonClick: false)
         }
     }
     
@@ -40,7 +40,6 @@ final class OnboardingViewController: UIViewController {
         }
         
         preparePageControl()
-        
         preparePageViewController()
     }
     
@@ -50,11 +49,11 @@ final class OnboardingViewController: UIViewController {
 
     // MARK: - BUTTON ACTIONS
     
-    @IBAction func nextButtonAction(_ sender: Any) {
+    @IBAction private func nextButtonAction(_ sender: Any) {
         nextPage(buttonClick: true)
     }
     
-    @IBAction func skipButton(_ sender: Any) {
+    @IBAction private func skipButton(_ sender: Any) {
         updateBeforeDismiss()
     }
     
@@ -118,9 +117,9 @@ final class OnboardingViewController: UIViewController {
         }
     }
     
-    // MARK: - ObjectiveC
+    // MARK: - Selector
     
-    @objc func dismissNotification(notification: Notification) {
+    @objc private func dismissNotification(notification: Notification) {
         DispatchQueue.main.async {
             self.alert.dismiss(animated: true, completion: nil)
             self.goMainPage()
@@ -132,8 +131,10 @@ final class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let index = slides.firstIndex(of: viewController as! SlideVC), index > 0 else { return nil }
-        return slides[index - 1]
+        guard let controller = viewController as? SlideVC,
+              let index = slides.firstIndex(of: controller), index > 0,
+              let slide = slides.get(at: index - 1) else { return nil }
+        return slide
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -146,5 +147,12 @@ extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewCo
         pageControl.currentPage = slides.firstIndex(of: page as! SlideVC)!
         nextButton.setTitle((pageControl.currentPage >= (pageControl.numberOfPages - 1)) ? "Finish" : "Next", for: .normal)
         skipButton.isHidden = (pageControl.currentPage >= (pageControl.numberOfPages - 1)) ? true : false
+    }
+}
+
+extension Collection {
+    func get(at index: Index?) -> Iterator.Element? {
+        guard let index = index, indices.contains(index) else { return nil }
+        return self[index]
     }
 }
