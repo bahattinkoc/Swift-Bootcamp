@@ -2,7 +2,7 @@
 //  PostCell.swift
 //  MVVM
 //
-//  Created by Bahattin Koç on 7.04.2022.
+//  Created by Bahattin Koç on 8.04.2022.
 //
 
 import UIKit
@@ -17,23 +17,23 @@ protocol PostCellDelegate: AnyObject {
 }
 
 // MARK: - CLASS
-final class PostCell: UICollectionViewCell {
+class PostCell: UITableViewCell {
 
-    weak var delegate: PostCellDelegate?
     @IBOutlet private weak var titleLabel: UILabel!
     private var post: Post?
+    weak var delegate: PostCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    @IBAction private func showDetailAction(_ sender: UIButton) {
-        guard let post = post else { return }
-        delegate?.showDetail(post: post)
     }
     
     func configure(model: Post) {
         titleLabel.text = model.title
         post = model
+    }
+
+    @IBAction private func showDetailAction(_ sender: UIButton) {
+        guard let post = post else { return }
+        delegate?.showDetail(post: post)
     }
 }

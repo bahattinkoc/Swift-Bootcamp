@@ -22,16 +22,13 @@ final class UserScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(cellType: UserCell.self)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        collectionView.setEachRowOneCell()
         viewModel.loadUsers()
     }
 }
 
 // MARK: - EXTENSIONS
-extension UserScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension UserScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.userCount
     }
@@ -42,11 +39,7 @@ extension UserScreenViewController: UICollectionViewDataSource, UICollectionView
         cell.configure(model: user)
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 83)
-    }
-    
+        
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewController = createVC(storyboardId: .userPostsScreen) as? UserPostsScreenViewController,
               let userId = self.viewModel.user(index: indexPath.row)?.id else { return }

@@ -11,7 +11,7 @@ import NetworkAPI
 // MARK: - CLASS
 final class UserPostsScreenViewController: UIViewController {
     
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var tableView: UITableView!
     
     var viewModel: UserPostsScreenViewModelProtocol! {
         didSet {
@@ -21,7 +21,7 @@ final class UserPostsScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(cellType: PostCell.self)
+        tableView.register(cellType: PostCell.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,25 +33,22 @@ final class UserPostsScreenViewController: UIViewController {
 // MARK: - EXTENSIONS
 extension UserPostsScreenViewController: UserPostsScreenViewModelDelegate {
     func reloadData() {
-        collectionView.reloadData()
+        tableView.reloadData()
     }
 }
 
-extension UserPostsScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension UserPostsScreenViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.postCount
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeCell(cellType: PostCell.self, indexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeCell(cellType: PostCell.self, indexPath: indexPath)
         guard let model = viewModel.post(index: indexPath.row) else { return cell }
         cell.configure(model: model)
+        cell.backgroundColor = indexPath.row % 2 == 0 ? .systemBackground : .systemGray5
         cell.delegate = self
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width, height: 90)
     }
 }
 

@@ -9,12 +9,8 @@
 /* Begin PBXBuildFile section */
 		A3005DBB27FEE26900AD0A70 /* PostDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3005DBA27FEE26900AD0A70 /* PostDetailsScreenViewController.swift */; };
 		A3005DBD27FEE27900AD0A70 /* PostDetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3005DBC27FEE27900AD0A70 /* PostDetailsScreenViewModel.swift */; };
-		A3005DC127FEEBC100AD0A70 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3005DBF27FEEBC100AD0A70 /* PostCell.swift */; };
-		A3005DC227FEEBC100AD0A70 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3005DC027FEEBC100AD0A70 /* PostCell.xib */; };
 		A3005DC527FF035200AD0A70 /* PostCommentsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3005DC427FF035200AD0A70 /* PostCommentsScreenViewController.swift */; };
 		A3005DC727FF036F00AD0A70 /* PostCommentsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3005DC627FF036F00AD0A70 /* PostCommentsScreenViewModel.swift */; };
-		A3005DCB27FF047C00AD0A70 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3005DC927FF047C00AD0A70 /* CommentCell.swift */; };
-		A3005DCC27FF047C00AD0A70 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3005DCA27FF047C00AD0A70 /* CommentCell.xib */; };
 		A336C78227FD809F00AAA80B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A336C78127FD809F00AAA80B /* AppDelegate.swift */; };
 		A336C78427FD809F00AAA80B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A336C78327FD809F00AAA80B /* SceneDelegate.swift */; };
 		A336C78927FD809F00AAA80B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A336C78727FD809F00AAA80B /* Main.storyboard */; };
@@ -39,6 +35,12 @@
 		A336C7E227FE291B00AAA80B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A336C7E127FE291B00AAA80B /* User.swift */; };
 		A336C7E427FE294300AAA80B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A336C7E327FE294300AAA80B /* Post.swift */; };
 		A336C7E627FE296A00AAA80B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A336C7E527FE296A00AAA80B /* Comment.swift */; };
+		A350553827FFAD3900F6D04B /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350553627FFAD3900F6D04B /* CommentCell.swift */; };
+		A350553927FFAD3900F6D04B /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A350553727FFAD3900F6D04B /* CommentCell.xib */; };
+		A350553B27FFB07A00F6D04B /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350553A27FFB07A00F6D04B /* UITableViewCell.swift */; };
+		A350553D27FFB09F00F6D04B /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350553C27FFB09F00F6D04B /* UITableView.swift */; };
+		A350554028005DDB00F6D04B /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A350553E28005DDB00F6D04B /* PostCell.swift */; };
+		A350554128005DDB00F6D04B /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A350553F28005DDB00F6D04B /* PostCell.xib */; };
 		A3B9D92F27FE3291005B1B62 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9D92E27FE3291005B1B62 /* URLs.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,12 +64,8 @@
 /* Begin PBXFileReference section */
 		A3005DBA27FEE26900AD0A70 /* PostDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsScreenViewController.swift; sourceTree = "<group>"; };
 		A3005DBC27FEE27900AD0A70 /* PostDetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsScreenViewModel.swift; sourceTree = "<group>"; };
-		A3005DBF27FEEBC100AD0A70 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		A3005DC027FEEBC100AD0A70 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		A3005DC427FF035200AD0A70 /* PostCommentsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentsScreenViewController.swift; sourceTree = "<group>"; };
 		A3005DC627FF036F00AD0A70 /* PostCommentsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentsScreenViewModel.swift; sourceTree = "<group>"; };
-		A3005DC927FF047C00AD0A70 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
-		A3005DCA27FF047C00AD0A70 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		A336C77E27FD809F00AAA80B /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A336C78127FD809F00AAA80B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A336C78327FD809F00AAA80B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +93,12 @@
 		A336C7E127FE291B00AAA80B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A336C7E327FE294300AAA80B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A336C7E527FE296A00AAA80B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		A350553627FFAD3900F6D04B /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		A350553727FFAD3900F6D04B /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		A350553A27FFB07A00F6D04B /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		A350553C27FFB09F00F6D04B /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		A350553E28005DDB00F6D04B /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		A350553F28005DDB00F6D04B /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		A3B9D92E27FE3291005B1B62 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,8 +140,8 @@
 		A3005DBE27FEEB7C00AD0A70 /* UserPostsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A3005DBF27FEEBC100AD0A70 /* PostCell.swift */,
-				A3005DC027FEEBC100AD0A70 /* PostCell.xib */,
+				A350553E28005DDB00F6D04B /* PostCell.swift */,
+				A350553F28005DDB00F6D04B /* PostCell.xib */,
 			);
 			path = UserPostsScreen;
 			sourceTree = "<group>";
@@ -154,8 +158,8 @@
 		A3005DC827FF045400AD0A70 /* PostCommentsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				A3005DC927FF047C00AD0A70 /* CommentCell.swift */,
-				A3005DCA27FF047C00AD0A70 /* CommentCell.xib */,
+				A350553627FFAD3900F6D04B /* CommentCell.swift */,
+				A350553727FFAD3900F6D04B /* CommentCell.xib */,
 			);
 			path = PostCommentsScreen;
 			sourceTree = "<group>";
@@ -227,6 +231,8 @@
 				A336C7CD27FD991700AAA80B /* UICollectionView.swift */,
 				A336C7D127FDB56E00AAA80B /* UIViewController.swift */,
 				A336C7DB27FDD4BE00AAA80B /* Collection.swift */,
+				A350553A27FFB07A00F6D04B /* UITableViewCell.swift */,
+				A350553C27FFB09F00F6D04B /* UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -450,9 +456,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A336C7CA27FD94F300AAA80B /* UserCell.xib in Resources */,
+				A350554128005DDB00F6D04B /* PostCell.xib in Resources */,
 				A336C79127FD80A000AAA80B /* LaunchScreen.storyboard in Resources */,
-				A3005DC227FEEBC100AD0A70 /* PostCell.xib in Resources */,
-				A3005DCC27FF047C00AD0A70 /* CommentCell.xib in Resources */,
+				A350553927FFAD3900F6D04B /* CommentCell.xib in Resources */,
 				A336C78E27FD80A000AAA80B /* Assets.xcassets in Resources */,
 				A336C78927FD809F00AAA80B /* Main.storyboard in Resources */,
 			);
@@ -488,20 +494,22 @@
 				A336C7CE27FD991700AAA80B /* UICollectionView.swift in Sources */,
 				A336C78227FD809F00AAA80B /* AppDelegate.swift in Sources */,
 				A336C7D527FDB5BF00AAA80B /* StoryboardNames.swift in Sources */,
+				A350553B27FFB07A00F6D04B /* UITableViewCell.swift in Sources */,
 				A336C7E227FE291B00AAA80B /* User.swift in Sources */,
 				A336C7DC27FDD4BE00AAA80B /* Collection.swift in Sources */,
+				A350553D27FFB09F00F6D04B /* UITableView.swift in Sources */,
 				A3005DC527FF035200AD0A70 /* PostCommentsScreenViewController.swift in Sources */,
 				A336C7BF27FD93C300AAA80B /* UserScreenViewModel.swift in Sources */,
-				A3005DCB27FF047C00AD0A70 /* CommentCell.swift in Sources */,
+				A350553827FFAD3900F6D04B /* CommentCell.swift in Sources */,
 				A3005DBD27FEE27900AD0A70 /* PostDetailsScreenViewModel.swift in Sources */,
 				A336C7E427FE294300AAA80B /* Post.swift in Sources */,
 				A336C78427FD809F00AAA80B /* SceneDelegate.swift in Sources */,
+				A350554028005DDB00F6D04B /* PostCell.swift in Sources */,
 				A336C7E627FE296A00AAA80B /* Comment.swift in Sources */,
 				A336C7D827FDB70100AAA80B /* UserPostsScreenViewController.swift in Sources */,
 				A336C7DA27FDB70D00AAA80B /* UserPostsScreenViewModel.swift in Sources */,
 				A336C78C27FD809F00AAA80B /* MVVM.xcdatamodeld in Sources */,
 				A336C7C927FD94F300AAA80B /* UserCell.swift in Sources */,
-				A3005DC127FEEBC100AD0A70 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,4 +16,11 @@ extension UICollectionView {
         guard let cell = dequeueReusableCell(withReuseIdentifier: cellType.identifier, for: indexPath) as? T else { fatalError("UICollectionView Extension dequeCell Fatal Error") }
         return cell
     }
+    
+    func setEachRowOneCell() {
+        let config = UICollectionLayoutListConfiguration(appearance: .plain)
+        let layout = UICollectionViewCompositionalLayout.list(using: config)
+        collectionViewLayout = layout
+        autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
 }

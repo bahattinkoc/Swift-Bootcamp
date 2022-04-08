@@ -10,7 +10,7 @@ import UIKit
 // MARK: - CLASS
 final class PostCommentsScreenViewController: UIViewController {
 
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var tableView: UITableView!
     
     var viewModel: PostCommentsScreenViewModelProtocol! {
         didSet {
@@ -20,31 +20,28 @@ final class PostCommentsScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(cellType: CommentCell.self)
+        tableView.register(cellType: CommentCell.self)
         viewModel.loadComments()
     }
 }
 
 // MARK: - EXTENSIONS
-extension PostCommentsScreenViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension PostCommentsScreenViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.commentCount
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeCell(cellType: CommentCell.self, indexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeCell(cellType: CommentCell.self, indexPath: indexPath)
         guard let model = viewModel.comment(index: indexPath.row) else { return cell }
         cell.configure(model: model)
+        cell.backgroundColor = indexPath.row % 2 == 0 ? .systemBackground : .systemGray5
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width, height: 200)
     }
 }
 
 extension PostCommentsScreenViewController: PostCommentsScreenViewModelDelegate {
     func reloadData() {
-        collectionView.reloadData()
+        tableView.reloadData()
     }
 }

@@ -2,25 +2,26 @@
 //  CommentCell.swift
 //  MVVM
 //
-//  Created by Bahattin Koç on 7.04.2022.
+//  Created by Bahattin Koç on 8.04.2022.
 //
 
 import UIKit
+import SwiftUI
 
-final class CommentCell: UICollectionViewCell {
+final class CommentCell: UITableViewCell {
 
+    @IBOutlet private weak var container: UIView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
-    @IBOutlet private weak var commentTextField: UITextField!
+    @IBOutlet private weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
     func configure(model: Comment) {
         nameLabel.text = model.name
         emailLabel.text = model.email
-        commentTextField.text = model.body
+        commentLabel.text = model.body
     }
 }
