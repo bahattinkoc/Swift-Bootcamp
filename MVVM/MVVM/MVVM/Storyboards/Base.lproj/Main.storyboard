@@ -177,6 +177,7 @@
                     <navigationItem key="navigationItem" title="Post Details" id="w0F-X6-cSd"/>
                     <connections>
                         <outlet property="detailLabel" destination="Lq2-mc-PrR" id="Fh9-oY-ddA"/>
+                        <outlet property="readCommentButton" destination="peB-ik-Kdc" id="tMG-9P-L6X"/>
                         <outlet property="titleLabel" destination="0v5-Wj-f2u" id="SOC-aD-QPE"/>
                         <segue destination="nDU-7p-FPl" kind="show" id="Qbu-qx-J5x"/>
                     </connections>

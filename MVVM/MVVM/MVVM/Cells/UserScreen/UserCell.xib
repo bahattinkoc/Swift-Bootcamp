@@ -24,19 +24,25 @@
                                 <rect key="frame" x="5" y="5" width="269" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leanne Graham" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGb-Ke-ve8">
-                                        <rect key="frame" x="0.0" y="0.0" width="269" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="269" height="19"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" systemColor="systemBlueColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sincere@april.biz" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NI-I8-mw7">
-                                        <rect key="frame" x="0.0" y="26.5" width="269" height="22"/>
+                                        <rect key="frame" x="0.0" y="20" width="269" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hildegard.org" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sda-ir-O1U">
-                                        <rect key="frame" x="0.0" y="49.5" width="269" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="38" width="269" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hildegard.org" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azv-xI-cns">
+                                        <rect key="frame" x="0.0" y="56" width="269" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -63,6 +69,7 @@
             </constraints>
             <size key="customSize" width="279" height="83"/>
             <connections>
+                <outlet property="companyNameLabel" destination="Azv-xI-cns" id="9SI-0E-L4S"/>
                 <outlet property="mailLabel" destination="4NI-I8-mw7" id="zB1-3X-pEv"/>
                 <outlet property="nameLabel" destination="iGb-Ke-ve8" id="H8r-SQ-b0H"/>
                 <outlet property="websiteLabel" destination="sda-ir-O1U" id="3Lf-4w-mok"/>
@@ -73,6 +80,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

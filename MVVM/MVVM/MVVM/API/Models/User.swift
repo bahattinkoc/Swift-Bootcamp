@@ -6,10 +6,15 @@
 //
 
 struct User: Decodable {
-    public let id: Int?
-    public let name: String?
-    public let username: String?
-    public let email: String?
-    public let phone: String?
-    public let website: String?
+    let id: Int?
+    let name: String?
+    let username: String?
+    let email: String?
+    let phone: String?
+    let website: String?
+    let company: Company?
+}
+
+struct Company: Decodable {
+    let name: String?
 }
