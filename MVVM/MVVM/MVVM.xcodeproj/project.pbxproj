@@ -240,9 +240,9 @@
 		A336C7C527FD94D700AAA80B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A336C7C627FD94DD00AAA80B /* UserScreen */,
 				A3005DC827FF045400AD0A70 /* PostCommentsScreen */,
 				A3005DBE27FEEB7C00AD0A70 /* UserPostsScreen */,
-				A336C7C627FD94DD00AAA80B /* UserScreen */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

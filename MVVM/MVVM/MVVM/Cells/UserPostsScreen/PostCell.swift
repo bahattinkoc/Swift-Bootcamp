@@ -17,7 +17,7 @@ protocol PostCellDelegate: AnyObject {
 }
 
 // MARK: - CLASS
-class PostCell: UITableViewCell {
+final class PostCell: UITableViewCell {
 
     @IBOutlet private weak var titleLabel: UILabel!
     private var post: Post?
