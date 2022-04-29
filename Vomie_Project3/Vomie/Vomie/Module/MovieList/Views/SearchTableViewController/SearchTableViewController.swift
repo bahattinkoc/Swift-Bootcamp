@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SearchTableViewController: UITableViewController {
-    var presenter: MovieListPresenterProtocol!
+final class SearchTableViewController: UITableViewController {
+    private var presenter: MovieListPresenterProtocol!
     
     init(presenter: MovieListPresenterProtocol) {
         super.init(style: .plain)

@@ -26,6 +26,7 @@ final class MovieListViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var pageControl: UIPageControl!
+    @IBOutlet private weak var headerSliderView: UIView!
     
     var presenter: MovieListPresenterProtocol!
     var searchController: UISearchController? = nil
@@ -39,10 +40,15 @@ final class MovieListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupSearchController()
+        setupHeaderSliderView()
     }
     
     @IBAction func pageControllerClicked(_ sender: UIPageControl) {
         presenter.pageControlTapped(index: sender.currentPage)
+    }
+    
+    private func setupHeaderSliderView() {
+        headerSliderView.heightAnchor.constraint(equalToConstant: CGFloat(view.frame.height / 3)).isActive = true
     }
 }
 

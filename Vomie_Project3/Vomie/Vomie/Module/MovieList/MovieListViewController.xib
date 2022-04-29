@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieListViewController" customModule="Vomie" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="BGB-sP-CNX" id="8I3-Fp-y27"/>
+                <outlet property="headerSliderView" destination="oSb-X9-mkz" id="s1L-vn-iAW"/>
                 <outlet property="pageControl" destination="on9-N4-3go" id="zx6-Oz-OXD"/>
                 <outlet property="tableView" destination="hjj-EM-Mck" id="9xh-LQ-qW6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,14 +23,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PAO-ZU-qxZ">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="PAO-ZU-qxZ">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSb-X9-mkz">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSb-X9-mkz" userLabel="HeaderSliderView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BGB-sP-CNX">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="djr-43-7L2">
                                         <size key="itemSize" width="128" height="128"/>
@@ -39,7 +40,7 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="on9-N4-3go">
-                                    <rect key="frame" x="0.0" y="174" width="414" height="26"/>
+                                    <rect key="frame" x="0.0" y="383" width="414" height="26"/>
                                     <color key="pageIndicatorTintColor" systemColor="separatorColor"/>
                                     <color key="currentPageIndicatorTintColor" name="AccentColor"/>
                                     <connections>
@@ -54,16 +55,15 @@
                                 <constraint firstAttribute="bottom" secondItem="on9-N4-3go" secondAttribute="bottom" id="KGk-2b-BWX"/>
                                 <constraint firstItem="BGB-sP-CNX" firstAttribute="top" secondItem="oSb-X9-mkz" secondAttribute="top" id="Kxa-r2-NAM"/>
                                 <constraint firstAttribute="trailing" secondItem="BGB-sP-CNX" secondAttribute="trailing" id="NSx-IJ-tn3"/>
-                                <constraint firstAttribute="height" constant="200" id="haC-tv-JV6"/>
                                 <constraint firstItem="on9-N4-3go" firstAttribute="leading" secondItem="oSb-X9-mkz" secondAttribute="leading" id="idx-hd-Zuu"/>
                                 <constraint firstItem="BGB-sP-CNX" firstAttribute="leading" secondItem="oSb-X9-mkz" secondAttribute="leading" id="w5Z-EC-I7Q"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ShS-Qx-beS">
-                            <rect key="frame" x="0.0" y="200" width="414" height="618"/>
+                            <rect key="frame" x="0.0" y="409" width="414" height="409"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hjj-EM-Mck">
-                                    <rect key="frame" x="8" y="8" width="398" height="602"/>
+                                    <rect key="frame" x="8" y="8" width="398" height="393"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                             </subviews>

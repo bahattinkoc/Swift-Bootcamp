@@ -43,6 +43,11 @@ final class MovieDetailViewController: UIViewController {
         setupFavoriteButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupMovieImageView()
+    }
+    
     //MARK: - PRIVATES FUNCTIONS
     private func setupIMDB() {
         imdbImageView.isUserInteractionEnabled = true
@@ -52,6 +57,10 @@ final class MovieDetailViewController: UIViewController {
     private func setupFavoriteButton() {
         favoriteImageView.isUserInteractionEnabled = true
         favoriteImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(favoriteTap)))
+    }
+    
+    private func setupMovieImageView() {
+        posterImageView.heightAnchor.constraint(equalToConstant: CGFloat(view.frame.height / 4)).isActive = true
     }
     
     //MARK: - OBJC FUNCTIONS
