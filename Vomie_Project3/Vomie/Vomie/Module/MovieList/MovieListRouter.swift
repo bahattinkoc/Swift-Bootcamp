@@ -6,6 +6,8 @@
 //  Copyright © 2022 Bahattin. All rights reserved.
 //
 
+import UIKit
+
 //MARK: - PROTOCOLS
 protocol MovieListRouterProtocol: AnyObject {
     func navigate(_ route: MovieListRoutes)

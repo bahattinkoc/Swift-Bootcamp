@@ -26,6 +26,7 @@ protocol MovieListPresenterProtocol: AnyObject {
 enum Lists {
     case nowPlaying
     case upcoming
+    case searched
 }
 
 //MARK: - CLASS
@@ -37,10 +38,16 @@ final class MovieListPresenter {
     private var upcoming: [Movie] = []
     private var searchedMovies: [Movie] = []
     var isSearchBarEmpty: Bool {
-        view?.getSearchController.searchBar.text?.isEmpty ?? true
+        if let searchController = view?.getSearchController {
+            return searchController.searchBar.text?.isEmpty ?? true
+        }
+        return true
     }
     var isFiltering: Bool {
-        view?.getSearchController.isActive ?? false && !isSearchBarEmpty
+        if let searchController = view?.getSearchController {
+            return searchController.isActive && !isSearchBarEmpty
+        }
+        return false
     }
 
     init(interactor: MovieListInteractorProtocol, router: MovieListRouterProtocol, view: MovieListViewControllerProtocol) {
@@ -73,7 +80,11 @@ extension MovieListPresenter: MovieListPresenterProtocol {
     }
     
     func filterSearchMoviesForSearchText(_ searchText: String) {
-        fetchSearchMovie(query: searchText)
+        if searchText.count > 1 {
+            fetchSearchMovie(query: searchText)
+        } else {
+            view?.searchedTableViewStatus(true)
+        }
     }
     
     func didSelectRowAt(index: Int, list: Lists) {
@@ -83,6 +94,9 @@ extension MovieListPresenter: MovieListPresenterProtocol {
             router.navigate(.movieDetail(movie: movie))
         case .upcoming:
             guard let movie = upcoming.getAt(at: index) else { return }
+            router.navigate(.movieDetail(movie: movie))
+        case .searched:
+            guard let movie = searchedMovies.getAt(at: index) else { return }
             router.navigate(.movieDetail(movie: movie))
         }
     }
@@ -130,8 +144,12 @@ extension MovieListPresenter: MovieListInteractorOutputProtocol {
         switch result {
             
         case .success(let searchResults):
-            guard let results = searchResults.results else { return }
+            guard let results = searchResults.results else {
+                view?.searchedTableViewStatus(!isFiltering)
+                return
+            }
             searchedMovies = results
+            view?.searchedTableViewStatus(searchedMovies.isEmpty)
             view?.reloadData()
         case .failure(let error):
             print("*****> fetchSearchMovieOutput error: \(error)")

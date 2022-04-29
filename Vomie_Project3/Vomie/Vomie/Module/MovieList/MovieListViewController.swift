@@ -17,7 +17,8 @@ protocol MovieListViewControllerProtocol: AnyObject {
     func setupSearchController()
     func setTitle(_ text: String)
     func changeSlideWithPageControl(index: Int)
-    var getSearchController: UISearchController { get }
+    func searchedTableViewStatus(_ status: Bool)
+    var getSearchController: UISearchController? { get }
 }
 
 //MARK: - CLASS
@@ -27,11 +28,17 @@ final class MovieListViewController: UIViewController {
     @IBOutlet private weak var pageControl: UIPageControl!
     
     var presenter: MovieListPresenterProtocol!
-    let searchController = UISearchController(searchResultsController: nil)
+    var searchController: UISearchController? = nil
+    var searchTableViewController: SearchTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupSearchController()
     }
     
     @IBAction func pageControllerClicked(_ sender: UIPageControl) {
@@ -41,15 +48,28 @@ final class MovieListViewController: UIViewController {
 
 //MARK: - EXTENSIONS
 extension MovieListViewController: MovieListViewControllerProtocol {
-    var getSearchController: UISearchController {
+    func searchedTableViewStatus(_ status: Bool) {
+        searchTableViewController?.tableView.isHidden = status
+    }
+    
+    var getSearchController: UISearchController? {
         searchController
     }
     
     func setupSearchController() {
+        searchTableViewController = SearchTableViewController(presenter: presenter)
+        searchTableViewController?.tableView.register(cellType: SearchedMovieCell.self)
+        searchController = UISearchController(searchResultsController: searchTableViewController)
+        
+        guard let searchController = searchController else { return }
         searchController.searchBar.placeholder = "Search Movie"
         searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = true
+        searchController.searchBar.searchBarStyle = .minimal
+        searchController.searchBar.sizeToFit()
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
     }
     
@@ -81,6 +101,7 @@ extension MovieListViewController: MovieListViewControllerProtocol {
     func reloadData() {
         tableView.reloadData()
         collectionView.reloadData()
+        searchTableViewController?.tableView.reloadData()
     }
 }
 
