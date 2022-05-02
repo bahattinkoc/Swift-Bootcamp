@@ -15,12 +15,12 @@ protocol MovieListPresenterProtocol: AnyObject {
     func getNowPlayingMovie(index: Int) -> Movie?
     func upcomingCount() -> Int?
     func getUpcomingMovie(index: Int) -> Movie?
-    func upcomingDidSelectRowAt(index: Int)
     func pageControlTapped(index: Int)
     func didSelectRowAt(index: Int, list: Lists)
     func filterSearchMoviesForSearchText(_ searchText: String)
-    func searchedMoviesCount() -> Int
+    func searchedMoviesCount() -> Int?
     func getSearchedMovies(index: Int) -> Movie?
+    func slideHeaderSlider(status: Bool)
 }
 
 enum Lists {
@@ -71,7 +71,11 @@ final class MovieListPresenter {
 
 //MARK: - EXTENSIONS
 extension MovieListPresenter: MovieListPresenterProtocol {
-    func searchedMoviesCount() -> Int {
+    func slideHeaderSlider(status: Bool) {
+        view?.slideHeaderSlider(status: status)
+    }
+    
+    func searchedMoviesCount() -> Int? {
         searchedMovies.count
     }
     
@@ -105,11 +109,6 @@ extension MovieListPresenter: MovieListPresenterProtocol {
         view?.changeSlideWithPageControl(index: index)
     }
     
-    func upcomingDidSelectRowAt(index: Int) {
-        guard let movie = upcoming.getAt(at: index) else { return }
-        router.navigate(.movieDetail(movie: movie))
-    }
-    
     func nowPlayingCount() -> Int? {
         5
     }
@@ -129,20 +128,19 @@ extension MovieListPresenter: MovieListPresenterProtocol {
     func viewDidLoad() {
         fetchMovieNowPlaying()
         fetchMovieUpcoming()
-        
         view?.setTitle("Movies")
         view?.setupTableView()
         view?.setupCollectionView()
         view?.setupSearchController()
-        view?.setupPageController(count: nowPlayingCount() ?? 0)
+        view?.setupPageController(count: nowPlayingCount() ?? 5)
         view?.reloadData()
     }
 }
 
 extension MovieListPresenter: MovieListInteractorOutputProtocol {
-    func fetchSearchMovieOutput(query: String, result: MovieSourceResult) {
+    func fetchSearchMovieOutput(result: MovieSourceResult) {
         switch result {
-            
+
         case .success(let searchResults):
             guard let results = searchResults.results else {
                 view?.searchedTableViewStatus(!isFiltering)

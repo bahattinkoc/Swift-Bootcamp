@@ -26,7 +26,8 @@ extension NowPlayingCellPresenter: NowPlayingCellPresenterProtocol {
     func load() {
         guard let poster = movie.poster_path else { return }
         view?.setImage(poster)
-        guard let title = movie.original_title else { return }
-        view?.setTitle(title)
+        guard let title = movie.original_title,
+              let year = movie.release_date else { return }
+        view?.setTitle("\(title) (\(year.prefix(4)))")
     }
 }

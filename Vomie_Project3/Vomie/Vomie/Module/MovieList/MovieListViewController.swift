@@ -18,6 +18,7 @@ protocol MovieListViewControllerProtocol: AnyObject {
     func setTitle(_ text: String)
     func changeSlideWithPageControl(index: Int)
     func searchedTableViewStatus(_ status: Bool)
+    func slideHeaderSlider(status: Bool)
     var getSearchController: UISearchController? { get }
 }
 
@@ -29,18 +30,26 @@ final class MovieListViewController: UIViewController {
     @IBOutlet private weak var headerSliderView: UIView!
     
     var presenter: MovieListPresenterProtocol!
-    var searchController: UISearchController? = nil
-    var searchTableViewController: SearchTableViewController?
+    private var searchController: UISearchController? = nil
+    private var searchTableViewController: SearchTableViewController?
+    private var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+        setAccessibilityIdentifier()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupSearchController()
         setupHeaderSliderView()
+        presenter.slideHeaderSlider(status: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        presenter.slideHeaderSlider(status: false)
     }
     
     @IBAction func pageControllerClicked(_ sender: UIPageControl) {
@@ -54,6 +63,21 @@ final class MovieListViewController: UIViewController {
 
 //MARK: - EXTENSIONS
 extension MovieListViewController: MovieListViewControllerProtocol {
+    func slideHeaderSlider(status: Bool) {
+        if status {
+            timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true, block: { timer in
+                let currentPage = self.pageControl.currentPage
+                if currentPage >= (self.pageControl.numberOfPages - 1) {
+                    self.changeSlideWithPageControl(index: 0)
+                } else {
+                    self.changeSlideWithPageControl(index: currentPage + 1)
+                }
+            })
+        } else {
+            timer.invalidate()
+        }
+    }
+    
     func searchedTableViewStatus(_ status: Bool) {
         searchTableViewController?.tableView.isHidden = status
     }
@@ -88,7 +112,6 @@ extension MovieListViewController: MovieListViewControllerProtocol {
     }
     
     func setupPageController(count: Int) {
-        pageControl.currentPage = 0
         pageControl.numberOfPages = count
     }
     
@@ -162,6 +185,14 @@ extension MovieListViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(scrollView.contentOffset.x / view.frame.width)
+        pageControl.currentPage = Int(collectionView.contentOffset.x / view.frame.width)
+    }
+}
+
+extension MovieListViewController {
+    func setAccessibilityIdentifier() {
+        collectionView.accessibilityIdentifier = "nowPlayingCollectionView"
+        tableView.accessibilityIdentifier = "upcomingTableView"
+        navigationController?.navigationBar.accessibilityIdentifier = "navigationBar"
     }
 }

@@ -84,9 +84,6 @@ enum Router: URLRequestConvertible {
         var completeParameters = parameters ?? [:]
         completeParameters["api_key"] = Router.apiKey
         
-        let urlRequestPrint = try encoding.encode(urlRequest, with: completeParameters)
-        debugPrint("*****> MY URL: ", urlRequestPrint.url ?? "")
-        
         return try encoding.encode(urlRequest, with: completeParameters)
     }
 }

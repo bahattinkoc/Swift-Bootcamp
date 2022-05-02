@@ -16,6 +16,7 @@ protocol MovieDetailPresenterProtocol: AnyObject {
     func gotoIMDB()
     func didSelectRowAt(index: Int)
     func toggleFavorite()
+    func setForceCancelFavorite()
 }
 
 //MARK: - CLASS
@@ -25,7 +26,7 @@ final class MovieDetailPresenter {
     let interactor: MovieDetailInteractorProtocol!
     private var similarMovies: [Movie] = []
     private var favoriteStatus: Bool = false
-    private var movieDetail: MovieDetailResponse? {
+    var movieDetail: MovieDetailResponse? {
         didSet {
             guard let poster = movieDetail?.poster_path else { return }
             view?.setMoviePoster(poster)
@@ -63,11 +64,20 @@ final class MovieDetailPresenter {
 
 //MARK: - EXTENSIONS
 extension MovieDetailPresenter: MovieDetailPresenterProtocol {
-    func toggleFavorite() {
-        favoriteStatus.toggle()
+    func setForceCancelFavorite() {
+        favoriteStatus = false
         view?.setFavoriteStatus(favoriteStatus)
         changeFavoriteStatus(favoriteStatus, movieDetail?.id ?? 0)
-        
+    }
+    
+    func toggleFavorite() {
+        if favoriteStatus {
+            view?.showAlert()
+        } else {
+            favoriteStatus.toggle()
+            view?.setFavoriteStatus(favoriteStatus)
+            changeFavoriteStatus(favoriteStatus, movieDetail?.id ?? 0)
+        }
     }
     
     func didSelectRowAt(index: Int) {

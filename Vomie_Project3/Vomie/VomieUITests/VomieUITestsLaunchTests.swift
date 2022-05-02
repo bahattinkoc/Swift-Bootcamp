@@ -7,7 +7,7 @@
 
 import XCTest
 
-class VomieUITestsLaunchTests: XCTestCase {
+final class VomieUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -19,6 +19,7 @@ protocol MovieDetailViewControllerProtocol: AnyObject {
     func setReleaseDate(_ text: String)
     func setMoviePoster(_ urlString: String)
     func setFavoriteStatus(_ status: Bool)
+    func showAlert()
 }
 
 //MARK: - CLASS
@@ -37,6 +38,7 @@ final class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setAccessibilityIdentifier()
         guard let movie = movie else { return }
         presenter.viewDidLoad(movie: movie)
         setupIMDB()
@@ -75,6 +77,15 @@ final class MovieDetailViewController: UIViewController {
 
 //MARK: - EXTENSIONS
 extension MovieDetailViewController: MovieDetailViewControllerProtocol {
+    func showAlert() {
+        let alertDialog = UIAlertController(title: "Warning", message: "Are you sure?", preferredStyle: .alert)
+        alertDialog.addAction(UIAlertAction(title: "CANCEL", style: .cancel))
+        alertDialog.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            self.presenter.setForceCancelFavorite()
+        }))
+        present(alertDialog, animated: true)
+    }
+    
     func setFavoriteStatus(_ status: Bool) {
         favoriteImageView.image = status ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
     }
@@ -132,3 +143,8 @@ extension MovieDetailViewController: UICollectionViewDataSource, UICollectionVie
     }
 }
 
+extension MovieDetailViewController {
+    func setAccessibilityIdentifier() {
+        imdbImageView.accessibilityIdentifier = "imdbImage"
+    }
+}

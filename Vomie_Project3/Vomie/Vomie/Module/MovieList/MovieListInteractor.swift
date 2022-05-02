@@ -16,7 +16,7 @@ protocol MovieListInteractorProtocol: AnyObject {
 protocol MovieListInteractorOutputProtocol: AnyObject {
     func fetchMovieNowPlayingOutput(result: MovieSourceResult)
     func fetchMovieUpcomingOutput(result: MovieSourceResult)
-    func fetchSearchMovieOutput(query: String, result: MovieSourceResult)
+    func fetchSearchMovieOutput(result: MovieSourceResult)
 }
 
 typealias MovieSourceResult = Result<MovieSourceResponse, Error>
@@ -32,7 +32,7 @@ extension MovieListInteractor: MovieListInteractorProtocol {
     func fetchSearchMovie(query: String) {
         movieService.fetchSearchMovie(query: query) { [weak self] result in
             guard let self = self else { return }
-            self.output?.fetchSearchMovieOutput(query: query, result: result)
+            self.output?.fetchSearchMovieOutput(result: result)
         }
     }
     
