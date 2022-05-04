@@ -403,13 +403,6 @@
 			path = NowPlayingCell;
 			sourceTree = "<group>";
 		};
-		A32DF9FC28198FBC0015665E /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		A37797C22817052600FD6200 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,7 +546,6 @@
 			isa = PBXGroup;
 			children = (
 				A31CBD59281B1467008806CF /* Singleton */,
-				A32DF9FC28198FBC0015665E /* Utils */,
 				A32DF9D728193B440015665E /* Extensions */,
 			);
 			path = Resource;

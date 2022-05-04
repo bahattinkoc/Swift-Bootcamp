@@ -5,7 +5,6 @@
 //  Created by Bahattin Koç on 25.04.2022.
 //
 
-import Foundation
 import MovieNetwork
 
 protocol MovieServiceProtocol {
