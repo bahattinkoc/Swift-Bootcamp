@@ -27,7 +27,8 @@ final class SplashViewController: UIViewController {
 //MARK: - EXTENSIONS
 extension SplashViewController: SplashViewControllerProtocol {
     func noInternetConnection() {
-        //TODO: Burası yapılacak
-        print("No Internet")
+        let alertDialog = UIAlertController(title: "Error", message: "No Internet Connection", preferredStyle: .alert)
+        alertDialog.addAction(UIAlertAction(title: "EXIT", style: .cancel))
+        present(alertDialog, animated: true)
     }
 }

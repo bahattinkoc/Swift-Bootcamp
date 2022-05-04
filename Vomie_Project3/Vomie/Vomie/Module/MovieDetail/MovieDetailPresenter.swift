@@ -107,7 +107,7 @@ extension MovieDetailPresenter: MovieDetailPresenterProtocol {
         view?.setTitle(movie.original_title ?? "")
         view?.setMovieTitle(movie.original_title ?? "")
         view?.setMovieOverview(movie.overview ?? "")
-        view?.setRate(String(movie.vote_average ?? 0))
+        view?.setRate(String(movie.vote_average?.round(1) ?? 0) + " (" + String(movie.vote_count ?? 0) + ")")
         view?.setReleaseDate(movie.release_date ?? "")
     }
 }
