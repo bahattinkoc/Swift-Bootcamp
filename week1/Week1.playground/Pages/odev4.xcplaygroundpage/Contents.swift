@@ -84,5 +84,104 @@ func findMaxPrime(number: Int) -> Int{
     return lastPrime
 }
 
-var maxPrime: Int = findMaxPrime(number: 600851475143)
-print(maxPrime)
+//var maxPrime: Int = findMaxPrime(number: 600851475143)
+//print(maxPrime)
+
+
+struct MATH {
+    var x: String
+    func sum(_ x: Int, _ y: Int) -> Int {
+        x + y
+    }
+}
+
+final class cMATH: UIViewController {
+    var x: String = ""
+    
+    fileprivate var abov: String = "abooov"
+    private var abov2: String = "aboooov 2"
+    
+    func sum(_ x: Int, _ y: Int) -> Int {
+        x + y
+    }
+    
+    deinit {
+        print("Goodbye")
+    }
+}
+
+var cMath = cMATH()
+cMath.abov
+
+//var math1 = MATH(x: "Hello")
+//var math2 = math1
+//math1.x = "World"
+//math2.x = "Hello"
+//print(math1.x)
+//print(math2.x)
+//
+//
+//var cMath1 = cMATH()
+//var cMath2 = cMath1
+//cMath1.x = "Hello"
+//cMath2.x = "World"
+//cMath1.x = "Abidik"
+//
+//print(cMath1.x)
+//print(cMath2.x)
+
+struct Human
+{
+    private var name : String
+   
+    init(name: String)
+    {
+      self.name = name
+    }
+   
+    mutating func changeName(newName: String)
+    {
+       self.name = newName
+    }
+    
+    func showName()
+    {
+       print(name)
+    }
+}
+
+
+var ohuman = Human(name: "kuyt")
+ohuman.showName()
+ohuman.changeName(newName: "alex")// let olan ohuman nesnesinin property'sinde değişiklik yapamayız. hata verir. Çünkü Struct Value Type'dır. Aynı örnek class olsaydı, çalışırdı;
+
+var list: [Any] = [Any]()
+list.append(4)
+list.append(1)
+list.append(3)
+list.append(0)
+list.append(9)
+
+print(list)
+
+var setDizi = Set<Int>()
+setDizi.insert(2)
+setDizi.insert(1)
+setDizi.insert(343)
+setDizi.insert(34)
+
+print(setDizi)
+setDizi.first
+
+
+enum BinanceInterval: String {
+    case min1 = "1m"
+    case min3 = "3m"
+    case min5 = "5m"
+}
+
+
+BinanceInterval.min1
+BinanceInterval.min1.rawValue
+
+print(BinanceInterval.min1.rawValue)

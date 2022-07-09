@@ -32,7 +32,7 @@ final class MovieDetailPresenter {
             view?.setMoviePoster(poster)
         }
     }
-
+    
     init(interactor: MovieDetailInteractorProtocol, router: MovieDetailRouterProtocol, view: MovieDetailViewControllerProtocol) {
         self.view = view
         self.interactor = interactor

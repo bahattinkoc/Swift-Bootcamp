@@ -1,0 +1,6 @@
+Kripto için Binance API
+_______________________
+https://www.binance.com/api/v3/exchangeInfo // HEPSİNİ GETİR
+https://www.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT // BİRİNİ GETİR
+
+https://www.binance.com/api/v3/klines?symbol=BTCUSDT&interval=5m&limit=200 // GEÇMİŞE AİT MUM BİLGİLERİ

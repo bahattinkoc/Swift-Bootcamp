@@ -13,15 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        let windowScene = UIWindowScene(session: session, connectionOptions: connectionOptions)
-        self.window = UIWindow(windowScene: windowScene)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let rootVC = storyboard.instantiateViewController(withIdentifier: StoryboardNames.userScreen.rawValue) as? UserScreenViewController else { return }
+        window = UIWindow(windowScene: UIWindowScene(session: session, connectionOptions: connectionOptions))
+        guard let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: StoryboardNames.userScreen.rawValue) as? UserScreenViewController else { return }
         let viewModel = UserScreenViewModel(service: NetworkService())
         rootVC.viewModel = viewModel
-        let navigation = UINavigationController(rootViewController: rootVC)
-        self.window?.rootViewController = navigation
-        self.window?.makeKeyAndVisible()
+        window?.rootViewController = UINavigationController(rootViewController: rootVC)
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -43,7 +40,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
-
-
 }
 
